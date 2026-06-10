@@ -1,0 +1,679 @@
+﻿:root {
+    --bg: #000;
+    --panel: #0d0d0d;
+    --border: #2a2a2a;
+    --text: #F0F8FF;
+    --muted: rgba(240,248,255,0.55);
+    --accent: #ff6f6f;
+}
+
+body {
+    font-family: 'Jersey 25', monospace;
+    color: var(--text);
+}
+
+/* ── Filter Bar ─────────────────────────────────────────── */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    padding: 100px 32px 32px;
+    background: #1a1a1a;
+}
+
+.filter-btn {
+    padding: 4px 0;
+    border-radius: 0;
+    /* No border at all */
+    border: none;
+    background: transparent;
+    color: rgba(240, 248, 255, 0.45);
+    font-family: 'Jersey 25', monospace;
+    font-size: 22px;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    outline: none;
+    box-shadow: none;
+}
+
+    .filter-btn:hover {
+        color: #ff6f6f;
+    }
+
+    .filter-btn.active {
+        color: #ff6f6f;
+    }
+
+/* ── Masonry Grid ───────────────────────────────────────── */
+.masonry-grid {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 0 4px 4px;
+    /* Faint checkered background */
+    background-color: #0d0d0d;
+    background-image: linear-gradient(45deg, #1a1a1a 25%, transparent 25%), linear-gradient(-45deg, #1a1a1a 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #1a1a1a 75%), linear-gradient(-45deg, transparent 75%, #1a1a1a 75%);
+    background-size: 24px 24px;
+    background-position: 0 0, 0 12px, 12px -12px, -12px 0px;
+}
+
+.masonry-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+/* ── Masonry Card ───────────────────────────────────────── */
+.masonry-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: #111;
+    display: block;
+    /* Card enter animation */
+    opacity: 0;
+    transform: translateY(18px);
+    animation: cardEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes cardEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger delays for cards based on nth-child within each column */
+.masonry-col .masonry-card:nth-child(1) {
+    animation-delay: 0.04s;
+}
+
+.masonry-col .masonry-card:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.masonry-col .masonry-card:nth-child(3) {
+    animation-delay: 0.16s;
+}
+
+.masonry-col .masonry-card:nth-child(4) {
+    animation-delay: 0.22s;
+}
+
+.masonry-col .masonry-card:nth-child(5) {
+    animation-delay: 0.28s;
+}
+
+.masonry-col .masonry-card:nth-child(6) {
+    animation-delay: 0.34s;
+}
+
+.masonry-col .masonry-card:nth-child(7) {
+    animation-delay: 0.40s;
+}
+
+.masonry-col .masonry-card:nth-child(8) {
+    animation-delay: 0.46s;
+}
+
+.masonry-col .masonry-card:nth-child(9) {
+    animation-delay: 0.52s;
+}
+
+.masonry-col .masonry-card:nth-child(10) {
+    animation-delay: 0.58s;
+}
+
+.masonry-col .masonry-card:nth-child(n+11) {
+    animation-delay: 0.62s;
+}
+
+/* Column-specific overrides for a diagonal wave effect */
+#col-1 .masonry-card:nth-child(1) {
+    animation-delay: 0.08s;
+}
+
+#col-1 .masonry-card:nth-child(2) {
+    animation-delay: 0.14s;
+}
+
+#col-1 .masonry-card:nth-child(3) {
+    animation-delay: 0.20s;
+}
+
+#col-1 .masonry-card:nth-child(4) {
+    animation-delay: 0.26s;
+}
+
+#col-1 .masonry-card:nth-child(5) {
+    animation-delay: 0.32s;
+}
+
+#col-1 .masonry-card:nth-child(6) {
+    animation-delay: 0.38s;
+}
+
+#col-1 .masonry-card:nth-child(7) {
+    animation-delay: 0.44s;
+}
+
+#col-1 .masonry-card:nth-child(8) {
+    animation-delay: 0.50s;
+}
+
+#col-1 .masonry-card:nth-child(n+9) {
+    animation-delay: 0.56s;
+}
+
+#col-2 .masonry-card:nth-child(1) {
+    animation-delay: 0.12s;
+}
+
+#col-2 .masonry-card:nth-child(2) {
+    animation-delay: 0.18s;
+}
+
+#col-2 .masonry-card:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+#col-2 .masonry-card:nth-child(4) {
+    animation-delay: 0.30s;
+}
+
+#col-2 .masonry-card:nth-child(5) {
+    animation-delay: 0.36s;
+}
+
+#col-2 .masonry-card:nth-child(6) {
+    animation-delay: 0.42s;
+}
+
+#col-2 .masonry-card:nth-child(7) {
+    animation-delay: 0.48s;
+}
+
+#col-2 .masonry-card:nth-child(8) {
+    animation-delay: 0.54s;
+}
+
+#col-2 .masonry-card:nth-child(n+9) {
+    animation-delay: 0.60s;
+}
+
+#col-3 .masonry-card:nth-child(1) {
+    animation-delay: 0.16s;
+}
+
+#col-3 .masonry-card:nth-child(2) {
+    animation-delay: 0.22s;
+}
+
+#col-3 .masonry-card:nth-child(3) {
+    animation-delay: 0.28s;
+}
+
+#col-3 .masonry-card:nth-child(4) {
+    animation-delay: 0.34s;
+}
+
+#col-3 .masonry-card:nth-child(5) {
+    animation-delay: 0.40s;
+}
+
+#col-3 .masonry-card:nth-child(6) {
+    animation-delay: 0.46s;
+}
+
+#col-3 .masonry-card:nth-child(7) {
+    animation-delay: 0.52s;
+}
+
+#col-3 .masonry-card:nth-child(8) {
+    animation-delay: 0.58s;
+}
+
+#col-3 .masonry-card:nth-child(n+9) {
+    animation-delay: 0.64s;
+}
+
+/* ── Pixel Art: square card, filled ─────────────────────── */
+.masonry-card.pixel-art-card {
+    aspect-ratio: 1 / 1;
+}
+
+    .masonry-card.pixel-art-card img,
+    .masonry-card.pixel-art-card.ratio-tall img,
+    .masonry-card.pixel-art-card.ratio-wide img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: unset;
+        object-fit: cover;
+        object-position: center;
+        max-height: unset;
+        margin: 0;
+    }
+
+/* Traditional art keeps cover behavior */
+.masonry-card.ratio-tall img {
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.masonry-card.ratio-wide img {
+    aspect-ratio: 4 / 3;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.masonry-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.masonry-card:hover img {
+    transform: scale(1.04);
+}
+
+/* Left accent bar */
+.masonry-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.18s ease;
+    z-index: 3;
+}
+
+.masonry-card:hover::before {
+    transform: scaleY(1);
+}
+
+/* Overlay */
+.masonry-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 14px;
+    z-index: 2;
+}
+
+.masonry-card:hover .masonry-overlay {
+    opacity: 1;
+}
+
+.masonry-title {
+    font-family: 'Jersey 25', monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #F0F8FF;
+    text-transform: uppercase;
+}
+
+/* ── Carousel ──────────────────────────────────────────── */
+.carousel {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+    .carousel.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+.carousel-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    backdrop-filter: blur(14px);
+    cursor: pointer;
+}
+
+.carousel-shell {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: min(96vw,1200px);
+    max-height: 96vh;
+    padding: 18px 18px 14px;
+    background: #0d0d0d;
+    border: 1px solid rgba(240,248,255,0.1);
+    border-radius: 20px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    overflow: hidden;
+}
+
+.carousel-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(240,248,255,0.2);
+    background: rgba(240,248,255,0.06);
+    color: var(--text);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.18s ease, border-color 0.18s ease;
+}
+
+    .carousel-close:hover {
+        background: rgba(255,111,111,0.2);
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+
+.carousel-stage {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track-wrap {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #000;
+    height: clamp(320px,62vh,700px);
+    cursor: zoom-in;
+    user-select: none;
+}
+
+    .carousel-track-wrap.zoomed {
+        cursor: grab;
+    }
+
+        .carousel-track-wrap.zoomed.dragging {
+            cursor: grabbing;
+        }
+
+    .carousel-track-wrap.swiping {
+        cursor: grabbing;
+    }
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+    .carousel-slide img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        user-select: none;
+        -webkit-user-drag: none;
+        display: block;
+        transform-origin: center;
+        transition: transform 0.25s ease;
+        will-change: transform;
+        /* Pixel art rendering in carousel too */
+        image-rendering: pixelated;
+    }
+
+.carousel-arrow {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(240,248,255,0.2);
+    background: rgba(240,248,255,0.06);
+    color: var(--text);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.18s, border-color 0.18s, transform 0.18s;
+    z-index: 5;
+    margin: 0 10px;
+}
+
+    .carousel-arrow:hover {
+        background: rgba(240,248,255,0.14);
+        border-color: var(--text);
+        transform: scale(1.08);
+    }
+
+.carousel-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.carousel-title {
+    font-family: 'Jersey 25', monospace;
+    font-size: 16px;
+    letter-spacing: 2.5px;
+    color: var(--text);
+    text-align: center;
+}
+
+.carousel-date {
+    font-family: 'Jersey 25', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(240,248,255,0.25);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    flex-shrink: 0;
+}
+
+    .carousel-dot.active {
+        background: var(--accent);
+        transform: scale(1.4);
+        box-shadow: 0 0 6px rgba(255,111,111,0.5);
+    }
+
+.carousel-zoom-level {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-family: 'Jersey 25', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text);
+    background: rgba(0,0,0,0.5);
+    padding: 3px 9px;
+    border-radius: 999px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 5;
+}
+
+.carousel-track-wrap.zoomed .carousel-zoom-level {
+    opacity: 1;
+}
+
+.carousel-zoom-hint {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-family: 'Jersey 25', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #F0F8FF;
+    text-shadow: 0 1px 3px rgba(0,0,0,1), 0 2px 8px rgba(0,0,0,1), 0 4px 16px rgba(0,0,0,0.9);
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.carousel-thumbs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 4px 0 2px;
+    width: 100%;
+    flex-shrink: 0;
+    scroll-behavior: smooth;
+    cursor: grab;
+    user-select: none;
+    justify-content: center;
+}
+
+    .carousel-thumbs.dragging {
+        cursor: grabbing;
+        scroll-behavior: auto;
+    }
+
+    .carousel-thumbs::-webkit-scrollbar {
+        display: none;
+    }
+
+.carousel-thumb {
+    flex: 0 0 72px;
+    height: 52px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    opacity: 0.45;
+    transition: opacity 0.18s, border-color 0.18s, transform 0.18s;
+    background: #111;
+}
+
+    .carousel-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        pointer-events: none;
+        image-rendering: pixelated;
+    }
+
+    .carousel-thumb:hover {
+        opacity: 0.75;
+        transform: translateY(-2px);
+    }
+
+    .carousel-thumb.active {
+        border-color: var(--accent);
+        opacity: 1;
+        box-shadow: 0 0 10px rgba(255,111,111,0.3);
+    }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .masonry-grid {
+        gap: 3px;
+        padding: 0 3px 3px;
+    }
+
+    .masonry-col {
+        gap: 3px;
+    }
+    /* hide 4th column — JS will also stop filling it */
+    #col-3 {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .masonry-grid {
+        gap: 2px;
+        padding: 0 2px 2px;
+    }
+
+    .masonry-col {
+        gap: 2px;
+    }
+
+    #col-2, #col-3 {
+        display: none;
+    }
+
+    .filter-bar {
+        padding: 88px 16px 24px;
+        gap: 24px;
+    }
+
+    .filter-btn {
+        font-size: 17px;
+        letter-spacing: 3px;
+    }
+}
+
+@media (max-width: 400px) {
+    .masonry-grid {
+        gap: 0;
+        padding: 0;
+    }
+
+    .masonry-col {
+        gap: 1px;
+    }
+
+    #col-1, #col-2, #col-3 {
+        display: none;
+    }
+}

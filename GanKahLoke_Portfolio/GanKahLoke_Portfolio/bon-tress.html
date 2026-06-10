@@ -1,0 +1,662 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bon-Tress — Gan Kah Loke</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bon-tress.css" />
+    <link rel="icon" href="assets/InfiniteBreaker_Logo.png" type="image/png">
+</head>
+
+<body>
+
+    <!-- LIGHTBOX -->
+    <div class="bt-lightbox" id="btLightbox">
+        <div class="bt-lightbox-inner" id="btLightboxInner">
+            <button class="bt-lightbox-close" id="btLightboxClose" aria-label="Close">✕</button>
+            <img id="btLightboxImg" src="" alt="" />
+            <p class="bt-lightbox-caption" id="btLightboxCaption"></p>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-logo">
+            <img alt="Gan Kah Loke Logo" />
+        </a>
+        <button class="nav-burger" id="navBurger">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="projects.html" class="active">WORKS</a></li>
+            <li><a href="artworks.html">ART</a></li>
+            <li><a href="index.html#contact">CONTACT</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="assets/Gan_Kah_Loke_Resume.pdf"
+               download="Gan_Kah_Loke_Resume.pdf"
+               target="_blank"
+               class="nav-cta nav-resume">
+                <img src="assets/KeyIcon.png" alt="" />
+                <span>GET RESUME</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="page-content">
+
+        <!-- ═══════════════ HERO ═══════════════ -->
+        <header class="bt-hero">
+            <div class="bt-hero-content">
+                <p class="bt-breadcrumb">
+                    <a href="projects.html">PROJECTS</a>
+                    <span style="margin:0 10px;opacity:.3;">/</span>
+                    BON-TRESS
+                </p>
+                <h1 class="bt-hero-title">Bon-Tress</h1>
+
+                <!-- GENRES & ROLES AS DISTINCT SECTIONS -->
+                <div class="bt-hero-tag-sections">
+                    <div class="bt-hero-tag-row">
+                        <span class="bt-hero-tag-label">ROLE(S)</span>
+                        <div class="bt-hero-tag-divider"></div>
+                        <span class="bt-tag bt-tag--role">GAME PROGRAMMER</span>
+                        <span class="bt-tag bt-tag--role">GAME DESIGNER</span>
+                    </div>
+                    <div class="bt-hero-tag-row">
+                        <span class="bt-hero-tag-label">GENRE(S)</span>
+                        <div class="bt-hero-tag-divider"></div>
+                        <span class="bt-tag bt-tag--genre">TOWER DEFENSE</span>
+                        <span class="bt-tag bt-tag--genre">STRATEGY</span>
+                        <span class="bt-tag bt-tag--genre">EDUCATIONAL</span>
+                        <span class="bt-tag bt-tag--plat">PC &amp; MAC</span>
+                    </div>
+                </div>
+
+                <div class="bt-hero-meta">
+                    <div class="bt-meta-item">
+                        <span class="bt-meta-label">DATE</span>
+                        <span class="bt-meta-val">Jan 2020 – Sep 2020</span>
+                    </div>
+                    <div class="bt-meta-item">
+                        <span class="bt-meta-label">DURATION</span>
+                        <span class="bt-meta-val">~9 Months</span>
+                    </div>
+                    <div class="bt-meta-item">
+                        <span class="bt-meta-label">TEAM SIZE</span>
+                        <span class="bt-meta-val">6 Members</span>
+                    </div>
+                    <div class="bt-meta-item">
+                        <span class="bt-meta-label">ENGINE</span>
+                        <span class="bt-meta-val">Unity2D · C#</span>
+                    </div>
+                    <div class="bt-meta-item">
+                        <span class="bt-meta-label">CLIENT</span>
+                        <span class="bt-meta-val">TP Learning Academy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bt-hero-art">
+                <img src="assets/bon-tress/gameplay_ss_01.png"
+                     alt="bon-tress thumbnail"/>
+            </div>
+        </header>
+
+        <!-- ═══════════════ TRAILER ═══════════════ -->
+        <section class="bt-trailer-section bt-fade">
+            <div class="bt-trailer-wrap">
+                <div class="bt-trailer-label">
+                    <span class="bt-trailer-tag">GAMEPLAY PREVIEW</span>
+                </div>
+                <video class="bt-trailer-video"
+                       src="assets/bon-tress/trailer.mp4"
+                       controls
+                       preload="metadata"
+                       poster="assets/Bon-Tress_Thumbnail.png"></video>
+            </div>
+        </section>
+
+        <!-- ═══════════════ CONTENT ═══════════════ -->
+        <div class="bt-page">
+
+            <!-- DOWNLOAD -->
+            <div class="bt-download bt-fade">
+                <div class="bt-download-inner">
+                    <div class="bt-download-text">
+                        <p class="bt-download-kicker">PLAYABLE BUILD</p>
+                        <h3 class="bt-download-title">PROTOTYPE V4</h3>
+                        <p class="bt-download-desc">Try the latest prototype — includes all 20 levels and SDL minigames.</p>
+                    </div>
+                    <div class="bt-download-btns">
+                        <a href="assets/bon-tress/Bon-Tress_Prototype_v4 (Windows).zip" download class="bt-download-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
+                            </svg>
+                            WINDOWS
+                            <span class="bt-download-size">36.6 MB</span>
+                        </a>
+                        <!--<a href="assets/bon-tress/Bon-Tress_Prototype_v4 (Mac).zip" download class="bt-download-btn bt-download-btn--mac">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701" />
+                            </svg>
+                            MAC
+                            <span class="bt-download-size">37.0 MB</span>
+                        </a>-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- OVERVIEW -->
+            <div class="bt-overview bt-fade">
+                <p class="bt-overview-desc">
+                    Bon-Tress is a <strong>2D pixel tower defense game</strong> where players deploy towers embodying
+                    positive learning traits to fend off "Bons" — slime infiltrators representing negative study habits.
+                    Developed over nine months for <strong>Temasek Polytechnic Learning Academy</strong> in
+                    collaboration with <strong>NUS</strong> (research) and <strong>Singapore Polytechnic</strong>
+                    (art assets), the game was purpose-built to make <strong>Self-Directed Learning (SDL)</strong>
+                    engaging through strategic, systems-driven gameplay.
+                </p>
+                <div class="bt-aside">
+                    <div>
+                        <p class="bt-aside-label">CLIENT</p>
+                        <p class="bt-aside-val"><strong>Temasek Polytechnic</strong><br>Learning Academy</p>
+                    </div>
+                    <div>
+                        <p class="bt-aside-label">COLLABORATORS</p>
+                        <p class="bt-aside-val">NUS · Singapore Polytechnic</p>
+                    </div>
+                    <div>
+                        <p class="bt-aside-label">TOOLS</p>
+                        <p class="bt-aside-val"><strong>Unity 2D</strong> · C# · Adobe XD</p>
+                    </div>
+                    <div>
+                        <p class="bt-aside-label">LEVELS</p>
+                        <p class="bt-aside-val"><strong>20</strong> + tutorial</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══════════════════════════════════════════
+                 01  IDEATION
+            ══════════════════════════════════════════ -->
+            <section class="bt-section bt-fade">
+                <div class="bt-section-header">
+                    <span class="bt-section-num">01</span>
+                    <h2 class="bt-section-title">IDEATION &amp; PROTOTYPING</h2>
+                    <div class="bt-section-line"></div>
+                </div>
+
+                <!-- IMAGE LEFT · TEXT RIGHT -->
+                <div class="bt-split bt-split--img-left">
+                    <div class="bt-split-media">
+                        <img src="assets/bon-tress/prototype.png" alt="Early prototype mockup"
+                             class="bt-split-img"
+                             data-lightbox="true"
+                             data-caption="EARLY ADOBE XD PROTOTYPE — Validated before a single line of code was written" />
+                        <p class="bt-split-caption">Early Adobe XD prototype — validated before a single line of code was written</p>
+                    </div>
+                    <div class="bt-split-text">
+                        <p class="bt-label-small">RESEARCH BASE</p>
+                        <h3 class="bt-split-heading">TWO FRAMEWORKS,<br>ONE GAME</h3>
+                        <p class="bt-body">
+                            Gamifying educational content demanded deep research before a single mechanic was designed.
+                            Every decision was grounded in <strong>Bloom's Taxonomy</strong> for measurable learning
+                            outcomes, and the <strong>6 Learning Strategies</strong> by the Learning Scientists
+                            to embed the educational process into moment-to-moment play.
+                        </p>
+                        <div class="bt-callout">
+                            <p class="bt-callout-label">DESIGN PHILOSOPHY</p>
+                            <p class="bt-callout-body">
+                                Tower defense naturally encourages critical thinking, problem-solving, and strategic
+                                planning — a direct mirror of self-directed learning. Players discover solutions rather
+                                than following predetermined paths.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════════════════
+                 02  TOWER DEFENSE
+            ══════════════════════════════════════════ -->
+            <section class="bt-section bt-fade">
+                <div class="bt-section-header">
+                    <span class="bt-section-num">02</span>
+                    <h2 class="bt-section-title">DEVELOPMENT — TOWER DEFENSE</h2>
+                    <div class="bt-section-line"></div>
+                </div>
+
+                <!-- TEXT LEFT · IMAGE RIGHT -->
+                <div class="bt-split bt-split--text-left">
+                    <div class="bt-split-text">
+                        <p class="bt-label-small">CORE LOOP</p>
+                        <h3 class="bt-split-heading">20 LEVELS OF<br>STRATEGIC DEPTH</h3>
+                        <p class="bt-body">
+                            The core loop spans <strong>20 levels plus a tutorial</strong>, each progressively introducing
+                            new tower types and Bon variants. Players score higher by applying the embedded learning
+                            strategies effectively — skill expression is directly tied to educational objectives.
+                        </p>
+                        <div class="bt-role-split">
+                            <div class="bt-role-block bt-role-block--design">
+                                <h4 class="bt-role-title">DESIGN</h4>
+                                <ul>
+                                    <li>Designed Bon characteristics, traits, and abilities — each with a distinct gameplay role</li>
+                                    <li>Developed level progression and difficulty balancing with a smooth learning curve</li>
+                                    <li>Created a scoring system to quantify and measure learning with meaningful feedback</li>
+                                </ul>
+                            </div>
+                            <div class="bt-role-block bt-role-block--code">
+                                <h4 class="bt-role-title">CODE</h4>
+                                <ul>
+                                    <li>Implemented Bon behavior: movement, ability triggers, animation state machines</li>
+                                    <li>Built scoring logic with save/load functionality for persistent progress tracking</li>
+                                    <li>Designed Scriptable Objects &amp; inheritable enemy base class for clean extensibility</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bt-split-media">
+                        <img src="assets/bon-tress/gameplay_ss_02.png" alt="Gameplay screenshot"
+                             class="bt-split-img"
+                             data-lightbox="true"
+                             data-caption="IN-GAME TOWER DEFENSE — Towers embody positive learning traits, Bons represent negative habits" />
+                        <p class="bt-split-caption">In-game tower defense — towers embody positive learning traits, Bons represent negative habits</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════════════════
+                 03  MAPS
+            ══════════════════════════════════════════ -->
+            <section class="bt-section bt-fade">
+                <div class="bt-section-header">
+                    <span class="bt-section-num">03</span>
+                    <h2 class="bt-section-title">LEVEL DESIGN — THE MAPS</h2>
+                    <div class="bt-section-line"></div>
+                </div>
+
+                <!-- MAP CARDS SIDE BY SIDE -->
+                <div class="bt-map-grid">
+                    <div class="bt-map-card bt-fade">
+                        <div class="bt-map-img-wrap"
+                             data-lightbox="true"
+                             data-src="assets/bon-tress/map_forest.png"
+                             data-caption="ENVIRONMENT 01 · FOREST MAP">
+                            <img src="assets/bon-tress/map_forest.png" alt="Forest map" class="bt-map-img" />
+                        </div>
+                        <div class="bt-map-info">
+                            <p class="bt-map-label">ENVIRONMENT 01</p>
+                            <h4 class="bt-map-name">FOREST</h4>
+                            <p class="bt-map-desc">The introductory environment. Winding paths teach players tower placement fundamentals while keeping enemy variety low to ease the learning curve.</p>
+                        </div>
+                    </div>
+                    <div class="bt-map-card bt-fade">
+                        <div class="bt-map-img-wrap"
+                             data-lightbox="true"
+                             data-src="assets/bon-tress/map_sand.png"
+                             data-caption="ENVIRONMENT 02 · DESERT MAP">
+                            <img src="assets/bon-tress/map_sand.png" alt="Sand map" class="bt-map-img" />
+                        </div>
+                        <div class="bt-map-info">
+                            <p class="bt-map-label">ENVIRONMENT 02</p>
+                            <h4 class="bt-map-name">DESERT</h4>
+                            <p class="bt-map-desc">A more open layout with split-lane branching paths. Forces players to think economically — tower limits per level keep unanticipated strategies viable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bt-insight bt-fade">
+                    <p class="bt-insight-label">LEVEL DESIGN PHILOSOPHY</p>
+                    <p class="bt-insight-text">
+                        Enemy stats were tracked in a spreadsheet against the in-game economy. Levels were deliberately
+                        open-ended: tower limits per stage let unanticipated strategies remain viable rather than
+                        forcing a single solution.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════════════════
+                 04  SDL MINIGAMES
+            ══════════════════════════════════════════ -->
+            <section class="bt-section bt-fade">
+                <div class="bt-section-header">
+                    <span class="bt-section-num">04</span>
+                    <h2 class="bt-section-title">DEVELOPMENT — SDL MINIGAMES</h2>
+                    <div class="bt-section-line"></div>
+                </div>
+
+                <!-- IMAGE LEFT · TEXT RIGHT -->
+                <div class="bt-split bt-split--img-left">
+                    <div class="bt-split-media">
+                        <img src="assets/bon-tress/gameplay_ss_01.png" alt="Minigame screenshot"
+                             class="bt-split-img"
+                             data-lightbox="true"
+                             data-caption="SDL MINIGAMES — Run alongside the main tower defense loop" />
+                        <p class="bt-split-caption">SDL minigames run alongside the main tower defense loop</p>
+                    </div>
+                    <div class="bt-split-text">
+                        <p class="bt-label-small">6 MINIGAMES · 6 STRATEGIES</p>
+                        <h3 class="bt-split-heading">LEARNING<br>MADE PLAYABLE</h3>
+                        <p class="bt-body">
+                            Six minigames were built alongside the tower defense core — each mapped 1:1 to one of the
+                            <strong>6 Learning Strategies</strong>. They serve both as a complement to the main loop
+                            and a standalone practice tool for players to test and validate their own learning methods.
+                        </p>
+                        <div class="bt-hl-grid" style="margin-top:24px;grid-template-columns:1fr 1fr;">
+                            <div class="bt-hl-card">
+                                <span class="bt-hl-icon">🎨</span>
+                                <h4 class="bt-hl-title">DUAL CODING</h4>
+                                <p class="bt-hl-body">Study dog-bark-to-colour associations, test recall after a break — simulating real study-break-review cycles.</p>
+                            </div>
+                            <div class="bt-hl-card">
+                                <span class="bt-hl-icon">🔁</span>
+                                <h4 class="bt-hl-title">RETRIEVAL PRACTICE</h4>
+                                <p class="bt-hl-body">Recall tests at increasing intervals distinguish conceptual understanding from rote memorisation.</p>
+                            </div>
+                        </div>
+                        <div class="bt-role-split" style="margin-top:16px;">
+                            <div class="bt-role-block bt-role-block--code">
+                                <h4 class="bt-role-title">CODE</h4>
+                                <ul>
+                                    <li>Implemented UI interactions based on user-interaction flowcharts</li>
+                                    <li>Built a global off-screen timer to accurately track learning intervals</li>
+                                    <li>Integrated audio assets at precise event timings</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════════════════
+                 05  PLAYTESTING
+            ══════════════════════════════════════════ -->
+            <section class="bt-section bt-fade">
+                <div class="bt-section-header">
+                    <span class="bt-section-num">05</span>
+                    <h2 class="bt-section-title">PLAYTESTING &amp; POLISHING</h2>
+                    <div class="bt-section-line"></div>
+                </div>
+
+                <!-- TEXT LEFT · IMAGE RIGHT -->
+                <div class="bt-split bt-split--text-left">
+                    <div class="bt-split-text">
+                        <p class="bt-label-small">STRUCTURED PIPELINE</p>
+                        <h3 class="bt-split-heading">TESTED, THEN<br>SHIPPED</h3>
+                        <p class="bt-body">
+                            A structured playtesting pipeline with local students and <strong>Google Forms surveys</strong>
+                            drove the final polish phase — surfacing specific friction points and leading to meaningful
+                            UX improvements across all 20 levels.
+                        </p>
+                        <div class="bt-timeline">
+                            <div class="bt-tl-item">
+                                <div class="bt-tl-left">GATHER</div>
+                                <div class="bt-tl-right">
+                                    <h4 class="bt-tl-title">Structured Playtesting</h4>
+                                    <p class="bt-tl-body">Local students played all 20 levels. Surveys collected data on difficulty spikes, learnability, and moments of friction.</p>
+                                </div>
+                            </div>
+                            <div class="bt-tl-item">
+                                <div class="bt-tl-left">IDENTIFY</div>
+                                <div class="bt-tl-right">
+                                    <h4 class="bt-tl-title">Mid-Game Difficulty Spike</h4>
+                                    <p class="bt-tl-body">Feedback surfaced insufficient clarity around damage dealt, tower combo potential, and a range of UI readability issues.</p>
+                                </div>
+                            </div>
+                            <div class="bt-tl-item">
+                                <div class="bt-tl-left">IMPROVE</div>
+                                <div class="bt-tl-right">
+                                    <h4 class="bt-tl-title">In-Game Encyclopedia</h4>
+                                    <p class="bt-tl-body">Added a player-friendly encyclopedia cataloguing all unlocked towers, Bons, and strategies.</p>
+                                </div>
+                            </div>
+                            <div class="bt-tl-item">
+                                <div class="bt-tl-left">POLISH</div>
+                                <div class="bt-tl-right">
+                                    <h4 class="bt-tl-title">Bug Fixes &amp; UI Refinement</h4>
+                                    <p class="bt-tl-body">All reported bugs, visual layering issues, and UI problems were resolved before final handover.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bt-split-media">
+                        <img src="assets/bon-tress/gameplay_ss_02.png" alt="Polished gameplay"
+                             class="bt-split-img"
+                             data-lightbox="true"
+                             data-caption="POST-PLAYTESTING POLISH — Refined UI readability and balanced progression" />
+                        <p class="bt-split-caption">Post-playtesting polish — refined UI readability and balanced progression</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════════════════
+                 06  HANDOVER
+            ══════════════════════════════════════════ -->
+            <section class="bt-section bt-fade">
+                <div class="bt-section-header">
+                    <span class="bt-section-num">06</span>
+                    <h2 class="bt-section-title">HANDOVER &amp; DOCUMENTATION</h2>
+                    <div class="bt-section-line"></div>
+                </div>
+
+                <div class="bt-hl-grid" style="margin-top:0;">
+                    <div class="bt-hl-card">
+                        <span class="bt-hl-icon">💬</span>
+                        <h4 class="bt-hl-title">CODE COMMENTS</h4>
+                        <p class="bt-hl-body">All comments revised for clarity. Full variable and function names — no abbreviations — with consistent naming conventions across the entire codebase.</p>
+                    </div>
+                    <div class="bt-hl-card">
+                        <span class="bt-hl-icon">📄</span>
+                        <h4 class="bt-hl-title">CODE DOCUMENTATION</h4>
+                        <p class="bt-hl-body">Individual PDF docs produced for each script, detailing functionality and scene placement for incoming junior developers.</p>
+                    </div>
+                    <div class="bt-hl-card">
+                        <span class="bt-hl-icon">🏗️</span>
+                        <h4 class="bt-hl-title">CLEAN ARCHITECTURE</h4>
+                        <p class="bt-hl-body">Scriptable Object stats and an inheritable base class kept the codebase modular — new enemy types added without touching existing systems.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- END NOTE -->
+            <div class="bt-reflection bt-fade">
+                <p class="bt-reflection-kicker">END NOTE</p>
+                <h3 class="bt-reflection-title">LOOKING BACK</h3>
+                <p class="bt-reflection-body">
+                    Bon-Tress was an incredibly rewarding project, even with the challenge of restarting development
+                    mid-way through. It gave me a deeper appreciation for how much craft goes into making a game
+                    that is simultaneously <strong>engaging and educational</strong> — especially when tackling
+                    serious learning concepts that resist simplification.
+                </p>
+                <p class="bt-reflection-body">
+                    Working with real institutional clients and cross-institution collaborators shaped how I think
+                    about design communication, rapid validation, and keeping systems open enough for teammates
+                    to build on freely. One day I hope to return to this project with refined skills to bring it
+                    to full completion.
+                </p>
+            </div>
+
+            <!-- NAV ROW -->
+            <div class="bt-nav-row bt-fade">
+                <a href="projects.html" class="bt-btn bt-btn--primary">← BACK TO PROJECTS</a>
+                <a href="ace.html" class="bt-btn bt-btn--ghost">NEXT: ACE →</a>
+            </div>
+
+        </div><!-- /bt-page -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <p class="footer-copy">GAN KAH LOKE © 2026</p>
+                <!--<p class="footer-sub">Game Designer • Game Developer • Pixel Artist</p>-->
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="projects.html">WORKS</a>
+                <a href="artworks.html">ART</a>
+                <a href="index.html#contact">CONTACT</a>
+            </nav>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/gan-kah-loke/" target="_blank" class="footer-icon-btn" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F0F8FF">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/pixinite_art/?hl=en" target="_blank" class="footer-icon-btn" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0F8FF" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.5" cy="6.5" r="1" fill="#F0F8FF" />
+                    </svg>
+                </a>
+                <a href="mailto:kahlokegan@gmail.com" class="footer-icon-btn" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0F8FF" stroke-width="2">
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <path d="M3 7l9 6 9-6" />
+                    </svg>
+                </a>
+                <a href="https://infinitebreaker.itch.io/" target="_blank" class="footer-icon-btn" aria-label="itch.io">
+                    <svg width="16" height="16" viewBox="0 0 248 248" fill="#F0F8FF"><path d="M31.99 1.365C21.287 7.542.2 31.945 0 38.524v9.015c0 11.498 10.775 21.538 20.544 21.538 11.772 0 21.623-9.761 21.623-21.46 0 11.699 9.55 21.46 21.322 21.46 11.771 0 21.095-9.761 21.095-21.46 0 11.699 10.143 21.46 21.914 21.46h.223c11.772 0 21.916-9.761 21.916-21.46 0 11.699 9.322 21.46 21.094 21.46 11.771 0 21.32-9.761 21.32-21.46 0 11.699 9.851 21.46 21.622 21.46 9.77 0 20.545-10.04 20.545-21.538v-9.015c-.2-6.579-21.287-30.982-31.99-37.16C181.669-.012 63.369-.149 31.99 1.365zM8 73.452v110.29h232V73.452H8zm26.06 18.732h179.88v72.826H34.06V92.184zm-8.06 82.826v35.71h248v-35.71H26zm35.714 9.284h60v17.142h-60v-17.142zm90.572 0h60v17.142h-60v-17.142z" /></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* ── Navbar burger ── */
+        const burger = document.getElementById('navBurger');
+        const navbar = document.getElementById('navbar');
+        if (burger) {
+        burger.addEventListener('click', () => navbar.classList.toggle('active'));
+        document.querySelectorAll('.nav-links a').forEach(l =>
+        l.addEventListener('click', () => navbar.classList.remove('active'))
+        );
+        }
+
+        /* ── Font-load guard ── */
+        document.documentElement.classList.add('fonts-loading');
+        document.fonts.ready.then(() => {
+        document.documentElement.classList.replace('fonts-loading', 'fonts-loaded');
+        });
+
+        /* ── LIGHTBOX ── */
+        (function lightbox() {
+        const lb        = document.getElementById('btLightbox');
+        const lbImg     = document.getElementById('btLightboxImg');
+        const lbCap     = document.getElementById('btLightboxCaption');
+        const lbClose   = document.getElementById('btLightboxClose');
+        let   zoomed    = false;
+        let   zoomScale = 2.4;
+
+        function openLightbox(src, caption) {
+        lbImg.src = src;
+        lbImg.style.transform = 'scale(1)';
+        lbImg.classList.remove('zoomed');
+        lbCap.textContent = caption || '';
+        zoomed = false;
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+        lb.classList.remove('active');
+        document.body.style.overflow = '';
+        zoomed = false;
+        lbImg.style.transform = 'scale(1)';
+        lbImg.classList.remove('zoomed');
+        lbImg.src = '';
+        }
+
+        // Toggle zoom on image click
+        lbImg.addEventListener('click', (e) => {
+        e.stopPropagation();
+        zoomed = !zoomed;
+        lbImg.style.transform = zoomed ? `scale(${zoomScale})` : 'scale(1)';
+        lbImg.classList.toggle('zoomed', zoomed);
+        });
+
+        // Close on backdrop click
+        lb.addEventListener('click', (e) => {
+        if (e.target === lb) closeLightbox();
+        });
+
+        lbClose.addEventListener('click', closeLightbox);
+
+        // ESC key
+        document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Bind all lightbox triggers
+        function bindLightboxTriggers() {
+        // Images with data-lightbox="true"
+        document.querySelectorAll('[data-lightbox="true"]').forEach(el => {
+        el.style.cursor = 'zoom-in';
+        el.addEventListener('click', () => {
+        const src = el.dataset.src || el.src || el.querySelector('img')?.src;
+        const cap = el.dataset.caption || el.alt || '';
+        if (src) openLightbox(src, cap);
+        });
+        });
+
+        // Map image wraps
+        document.querySelectorAll('.bt-map-img-wrap[data-lightbox="true"]').forEach(el => {
+        el.style.cursor = 'zoom-in';
+        el.addEventListener('click', () => {
+        const src = el.dataset.src;
+        const cap = el.dataset.caption || '';
+        if (src) openLightbox(src, cap);
+        });
+        });
+        }
+
+        bindLightboxTriggers();
+        })();
+
+        /* ── Page fade-in + link transitions ── */
+        (function () {
+        const content = document.querySelector('.page-content');
+        if (!content) return;
+        content.style.opacity = '0';
+        content.style.transition = 'opacity 0.45s ease';
+        window.addEventListener('load', () =>
+        requestAnimationFrame(() => {
+        navbar?.classList.remove('nav-exit');
+        content.style.opacity = '1';
+        })
+        );
+        document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('javascript') ||
+        a.target === '_blank' || a.hasAttribute('download')) return;
+        a.addEventListener('click', e => {
+        const url = new URL(a.href, window.location.href);
+        const samePage = url.pathname === window.location.pathname &&
+        url.hash === window.location.hash;
+        if (samePage) return;
+        e.preventDefault();
+        navbar?.classList.add('nav-exit');
+        content.style.opacity = '0';
+        setTimeout(() => { window.location.href = a.href; }, 450);
+        });
+        });
+        })();
+
+        /* ── Scroll reveal ── */
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+        document.querySelectorAll('.bt-fade').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

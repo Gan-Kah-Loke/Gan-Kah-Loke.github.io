@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects — Gan Kah Loke</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="projects.css" />
+    <link rel="icon" href="assets/InfiniteBreaker_Logo.png" type="image/png">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img alt="Gan Kah Loke Logo" />
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="#" class="active">WORKS</a></li>
+            <li><a href="artworks.html">ART</a></li>
+            <li><a href="index.html#contact">CONTACT</a></li>
+            <li class="nav-cta-item">
+                <a href="assets/Gan_Kah_Loke_Resume.pdf" download="Gan_Kah_Loke_Resume.pdf" target="_blank" class="nav-cta nav-resume">
+                    <img src="assets/KeyIcon.png" alt="" />
+                    <span>GET RESUME</span>
+                </a>
+            </li>
+        </ul>
+        <div class="nav-actions">
+            <button class="nav-burger" id="navBurger">☰</button>
+            <a href="assets/Gan_Kah_Loke_Resume.pdf" download="Gan_Kah_Loke_Resume.pdf" target="_blank" class="nav-cta nav-resume">
+                <img src="assets/KeyIcon.png" alt="" />
+                <span>GET RESUME</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section class="gp-section">
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-copy">GAN KAH LOKE © 2026</p>
+            <nav class="footer-nav">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="#">WORKS</a>
+                <a href="artworks.html">ART</a>
+                <a href="index.html#contact">CONTACT</a>
+            </nav>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/gan-kah-loke/" target="_blank" class="footer-icon-btn" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F0F8FF">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/pixinite_art/?hl=en" target="_blank" class="footer-icon-btn" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0F8FF" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.5" cy="6.5" r="1" fill="#F0F8FF" />
+                    </svg>
+                </a>
+                <a href="mailto:kahlokegan@gmail.com" class="footer-icon-btn" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0F8FF" stroke-width="2">
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <path d="M3 7l9 6 9-6" />
+                    </svg>
+                </a>
+                <a href="https://infinitebreaker.itch.io/" target="_blank" class="footer-icon-btn" aria-label="itch.io">
+                    <svg width="16" height="16" viewBox="0 0 248 248" fill="#F0F8FF"><path d="M31.99 1.365C21.287 7.542.2 31.945 0 38.524v9.015c0 11.498 10.775 21.538 20.544 21.538 11.772 0 21.623-9.761 21.623-21.46 0 11.699 9.55 21.46 21.322 21.46 11.771 0 21.095-9.761 21.095-21.46 0 11.699 10.143 21.46 21.914 21.46h.223c11.772 0 21.916-9.761 21.916-21.46 0 11.699 9.322 21.46 21.094 21.46 11.771 0 21.32-9.761 21.32-21.46 0 11.699 9.851 21.46 21.622 21.46 9.77 0 20.545-10.04 20.545-21.538v-9.015c-.2-6.579-21.287-30.982-31.99-37.16C181.669-.012 63.369-.149 31.99 1.365zM8 73.452v110.29h232V73.452H8zm26.06 18.732h179.88v72.826H34.06V92.184zm-8.06 82.826v35.71h248v-35.71H26zm35.714 9.284h60v17.142h-60v-17.142zm90.572 0h60v17.142h-60v-17.142z" /></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="projects-data.js"></script>
+    <script src="pdf-viewer.js"></script>
+    <script src="projects.js"></script>
+
+</body>
+</html>

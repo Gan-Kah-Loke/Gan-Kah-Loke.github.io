@@ -1,0 +1,732 @@
+﻿/* ═══════════════════════════════════════════════════════════════
+   SERVEEM PAGE STYLES
+═══════════════════════════════════════════════════════════════ */
+
+/* ── LIGHTBOX ─────────────────────────────────────── */
+.se-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.92);
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+    .se-lightbox.active {
+        display: flex;
+    }
+
+.se-lightbox-inner {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    cursor: default;
+    overflow: hidden;
+}
+
+.se-lightbox img {
+    display: block;
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid rgba(255,111,111,0.25);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.8);
+    transform-origin: center center;
+    transition: transform 0.2s ease;
+    cursor: zoom-in;
+    user-select: none;
+}
+
+    .se-lightbox img.zoomed {
+        cursor: zoom-out;
+    }
+
+.se-lightbox-close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    background: transparent;
+    border: 1px solid rgba(255,111,111,0.4);
+    color: #ff6f6f;
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.2s ease;
+}
+
+    .se-lightbox-close:hover {
+        background: rgba(255,111,111,0.15);
+    }
+
+.se-lightbox-caption {
+    margin-top: 12px;
+    font-family: 'Inter', monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: rgba(240,248,255,0.7);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════════════════════
+   TOP BLOCK
+══════════════════════════════════════════════════════ */
+/* ── TOP NAV ROW ───────────────────────────── */
+.se-top-nav {
+    display: grid;
+    grid-template-columns: 140px 1fr 140px;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+/* prev / next buttons */
+.se-project-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ff7f7f;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    user-select: none;
+}
+
+    .se-project-nav:hover {
+        opacity: 0.75;
+        transform: translateY(-1px);
+    }
+
+.se-project-nav-prev {
+    justify-self: start;
+}
+
+.se-project-nav-next {
+    justify-self: end;
+}
+
+/* centered hero title */
+.se-hero-title {
+    text-align: center;
+    font-family: 'Jersey 25', monospace;
+    font-size: clamp(2.6rem, 5vw, 4.5rem);
+    line-height: 1;
+    color: #F0F8FF;
+    letter-spacing: 5px;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.8), 0 0 30px rgba(255,107,107,0.35);
+}
+
+.se-top-block {
+    position: relative;
+    margin-top: 70px;
+    border-bottom: 1px solid rgba(255,111,111,0.14);
+    overflow: hidden;
+}
+
+    .se-top-block::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient( rgba(0,0,0,0.78), rgba(0,0,0,0.84) ), url("projects/games/serveem/ServeEM_Thumbnail.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: brightness(1.00) saturate(0.75);
+        transform: scale(1.03);
+        z-index: 0;
+    }
+
+    /* optional subtle neutral glow instead */
+    .se-top-block::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient( circle at top, rgba(255,255,255,0.04), transparent 100% );
+        z-index: 1;
+        pointer-events: none;
+    }
+
+/* keep content above bg */
+.se-title-bar,
+.se-trailer-wrap {
+    position: relative;
+    z-index: 2;
+}
+
+/* Title bar — matches navbar inner width (nav has ~24px padding each side on content) */
+.se-title-bar {
+    max-width: var(--se-content-width, 1400px);
+    margin: 0 auto;
+    padding: 48px var(--se-gutter, 32px) 20px;
+    text-align: center;
+}
+
+/* category text */
+.se-breadcrumb {
+    text-align: center;
+    font-family: 'Inter', monospace;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(240,248,255,0.6);
+}
+
+    .se-breadcrumb a {
+        color: #ff6f6f;
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+
+        .se-breadcrumb a:hover {
+            opacity: 0.7;
+        }
+
+/* Trailer — full width of section, video centred */
+.se-trailer-wrap {
+    width: 100%;
+    padding: 0 0 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.se-trailer-video {
+    width: 100%;
+    max-width: 820px;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    border: 1px solid rgba(255,111,111,0.22);
+    background: #000;
+    display: block;
+    box-shadow: 0 8px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,111,111,0.08);
+}
+
+/* ══════════════════════════════════════════════════════
+   BOTTOM BLOCK — wider, matching nav logo-to-cta span
+══════════════════════════════════════════════════════ */
+.se-bottom-block {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 0;
+    /* Match the navbar's usable inner width */
+    max-width: var(--se-content-width, 1400px);
+    margin: 0 auto;
+    padding: 64px var(--se-gutter, 32px) 120px;
+    align-items: start;
+    background: transparent;
+}
+
+/* ── LEFT COLUMN ──────────────────────────────────── */
+.se-desc-col {
+    padding-right: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* STATUS + INSTALL stacked block */
+.se-status-install-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 48px;
+}
+
+/* ── STATUS BAR ───────────────────────────────────── */
+.se-status-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 18px;
+    background: rgba(255,180,0,0.06);
+    border: 1px solid rgba(255,180,0,0.22);
+    border-left: 3px solid rgba(255,180,0,0.65);
+    border-bottom: none;
+    border-radius: 0 6px 0 0;
+}
+
+.se-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.se-status-dot--maintenance {
+    background: #ffb400;
+    box-shadow: 0 0 8px rgba(255,180,0,0.6);
+    animation: se-pulse 2s ease-in-out infinite;
+}
+
+.se-status-dot--live {
+    background: #4cde80;
+    box-shadow: 0 0 8px rgba(76,222,128,0.6);
+    animation: se-pulse 2s ease-in-out infinite;
+}
+
+.se-status-label {
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #ffb400;
+    font-weight: 600;
+}
+
+.se-status-detail {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(240,248,255,0.65);
+}
+
+@keyframes se-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+}
+
+/* ── APK DOWNLOAD CARD ────────────────────────────── */
+.se-apk-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: #1a0808;
+    border: 1px solid rgba(255,111,111,0.2);
+    border-left: 3px solid rgba(255,111,111,0.6);
+    border-radius: 0 0 8px 0;
+    padding: 20px 24px;
+}
+
+.se-apk-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.se-apk-card-label {
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ff8080;
+}
+
+.se-apk-card-title {
+    font-family: 'Jersey 25', monospace;
+    font-size: 22px;
+    letter-spacing: 2.5px;
+    color: #F0F8FF;
+    line-height: 1;
+}
+
+.se-apk-card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(240,248,255,0.78);
+    margin-top: 2px;
+}
+
+.se-apk-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    padding: 13px 22px;
+    background: #ff6f6f;
+    border: none;
+    border-radius: 7px;
+    text-decoration: none;
+    color: #1a0000;
+    font-family: 'Jersey 25', monospace;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
+}
+
+    .se-apk-btn:hover {
+        background: #ff9090;
+        transform: translateY(-2px);
+    }
+
+.se-apk-btn-icon {
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.se-apk-btn-size {
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+/* Content sections */
+.se-content-section {
+    padding-bottom: 56px;
+    margin-bottom: 56px;
+    border-bottom: 1px solid rgba(255,111,111,0.1);
+}
+
+    .se-content-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+.se-label-small {
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    color: #ff7070;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+/* Enlarged body text */
+.se-overview-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 2.0;
+    color: rgba(240,248,255,0.9);
+    margin-bottom: 20px;
+}
+
+    .se-overview-desc:last-child {
+        margin-bottom: 0;
+    }
+
+    .se-overview-desc strong {
+        color: #F0F8FF;
+        font-weight: 600;
+    }
+
+/* ── WHAT I BUILT GRID ────────────────────────────── */
+.se-what-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.se-what-card {
+    background: #1e0c0c;
+    border: 1px solid rgba(255,111,111,0.15);
+    border-radius: 8px;
+    padding: 20px 20px 22px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    transition: border-color 0.25s, transform 0.25s;
+}
+
+    .se-what-card:hover {
+        border-color: rgba(255,111,111,0.38);
+        transform: translateY(-2px);
+    }
+
+.se-what-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.se-what-title {
+    font-family: 'Jersey 25', monospace;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    color: #ffa0a0;
+    margin-bottom: 8px;
+}
+
+.se-what-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.85;
+    color: rgba(240,248,255,0.82);
+}
+
+/* ── THOUGHT PROCESS ──────────────────────────────── */
+.se-thought-item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 0 20px;
+    margin-bottom: 0;
+}
+
+.se-thought-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4px;
+}
+
+.se-thought-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ff6f6f;
+    box-shadow: 0 0 10px rgba(255,111,111,0.5);
+    flex-shrink: 0;
+}
+
+.se-thought-line {
+    flex: 1;
+    width: 1px;
+    background: rgba(255,111,111,0.2);
+    margin-top: 6px;
+    min-height: 28px;
+}
+
+.se-thought-body {
+    padding-bottom: 36px;
+}
+
+.se-thought-item:last-child .se-thought-body {
+    padding-bottom: 0;
+}
+
+.se-thought-item:last-child .se-thought-line {
+    display: none;
+}
+
+.se-thought-title {
+    font-family: 'Jersey 25', monospace;
+    font-size: 19px;
+    letter-spacing: 2px;
+    color: #F0F8FF;
+    margin-bottom: 10px;
+}
+
+.se-thought-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 2.0;
+    color: rgba(240,248,255,0.88);
+}
+
+    .se-thought-text em {
+        color: #ffaaaa;
+        font-style: normal;
+    }
+
+/* ── REFLECTION CARD ──────────────────────────────── */
+.se-reflection-card {
+    background: #1e0c0c;
+    border: 1px solid rgba(255,111,111,0.15);
+    border-left: 3px solid rgba(255,111,111,0.55);
+    border-radius: 0 8px 8px 0;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+    .se-reflection-card .se-overview-desc {
+        margin-bottom: 0;
+    }
+
+/* ══════════════════════════════════════════════════════
+   RIGHT COLUMN — info panel (no sticky)
+══════════════════════════════════════════════════════ */
+.se-info-panel {
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.se-meta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.se-meta-group-label {
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ff7070;
+    margin-bottom: 2px;
+}
+
+.se-meta-group-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #F0F8FF;
+    line-height: 1.5;
+}
+
+.se-meta-group-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(240,248,255,0.75);
+    line-height: 1.5;
+}
+
+.se-meta-divider {
+    height: 1px;
+    background: rgba(255,111,111,0.12);
+    margin: 0;
+}
+
+/* ── TAGS ─────────────────────────────────────────── */
+.se-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.se-tag {
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border-radius: 4px;
+}
+
+.se-tag--genre {
+    color: #ff9090;
+    background: rgba(255,111,111,0.12);
+    border: 1px solid rgba(255,111,111,0.4);
+}
+
+.se-tag--plat {
+    color: rgba(240,248,255,0.85);
+    background: rgba(240,248,255,0.07);
+    border: 1px solid rgba(240,248,255,0.2);
+}
+
+/* ── TECH PILLS ───────────────────────────────────── */
+.se-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.se-tech-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(240,248,255,0.88);
+    background: rgba(240,248,255,0.06);
+    border: 1px solid rgba(240,248,255,0.14);
+    border-radius: 6px;
+    padding: 7px 12px;
+}
+
+    .se-tech-pill svg {
+        opacity: 0.75;
+        flex-shrink: 0;
+    }
+
+.se-tech-logo {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+/* ══════════════════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════════════════ */
+.se-fade {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+    .se-fade.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════ */
+@media (max-width: 1200px) {
+    .se-bottom-block {
+        grid-template-columns: 1fr 260px;
+    }
+}
+
+@media (max-width: 960px) {
+    .se-bottom-block {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .se-desc-col {
+        padding-right: 0;
+    }
+
+    .se-info-panel {
+        padding-left: 0;
+        padding-top: 48px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px 40px;
+    }
+
+    .se-meta-divider {
+        display: none;
+    }
+
+    .se-apk-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .se-status-bar {
+        border-radius: 0 6px 0 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .se-what-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .se-info-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .se-status-detail {
+        display: none;
+    }
+}

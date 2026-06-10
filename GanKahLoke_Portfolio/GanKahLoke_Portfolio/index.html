@@ -1,0 +1,512 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gan Kah Loke — Game Designer & Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="fonts-loading">
+
+    <!-- Progress bar -->
+    <div class="pg-bar"><div class="pg-fill" id="pgFill"></div></div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint" id="scrollHint">
+        <span class="scroll-hint-text">SCROLL</span>
+        <span class="scroll-hint-arrow">↓</span>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         NAVBAR
+    ════════════════════════════════════════════════════════ -->
+    <nav class="navbar">
+        <a href="#" class="nav-logo">
+            <img alt="Gan Kah Loke Logo" />
+        </a>
+        <ul class="nav-links">
+            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="projects.html">WORKS</a></li>
+            <li><a href="artworks.html">ART</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li class="nav-cta-item">
+                <a href="assets/Gan_Kah_Loke_Resume.pdf"
+                   download="Gan_Kah_Loke_Resume.pdf"
+                   target="_blank"
+                   class="nav-cta nav-resume">
+                    <img src="assets/KeyIcon.png" alt="" />
+                    <span>GET RESUME</span>
+                </a>
+            </li>
+        </ul>
+        <div class="nav-actions">
+            <button class="nav-burger" id="navBurger">☰</button>
+            <a href="assets/Gan_Kah_Loke_Resume.pdf"
+               download="Gan_Kah_Loke_Resume.pdf"
+               target="_blank"
+               class="nav-cta nav-resume">
+                <img src="assets/KeyIcon.png" alt="" />
+                <span>GET RESUME</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="side-nav">
+        <a href="#" class="side-nav-btn active" data-label="HOME">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
+        </a>
+        <a href="#about" class="side-nav-btn" data-label="ABOUT">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" /></svg>
+        </a>
+        <a href="#projects" class="side-nav-btn" data-label="FEATURED PROJECTS">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
+        </a>
+        <a href="#contact" class="side-nav-btn" data-label="CONTACT">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+        </a>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════════════════════ -->
+    <section id="home" class="hero">
+        <div class="hero-scanline-sweep" id="heroScanlineSweep"></div>
+
+        <div class="hero-content">
+            <p class="hero-greeting">HEY! I'M</p>
+            <h1 class="hero-name">
+                <span class="name-highlight">GAN</span> KAH LOKE
+            </h1>
+            <div class="hero-roles">
+                <span class="role">GAME DESIGNER</span>
+                <span class="dot">•</span>
+                <span class="role">GAME DEVELOPER</span>
+                <span class="dot">•</span>
+                <span class="role">PIXEL ARTIST</span>
+            </div>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-contact">HIRE ME →</a>
+                <a href="projects.html" class="btn-projects">VIEW WORKS</a>
+            </div>
+            <div class="scroll-hint show">
+                <div class="scroll-hint-text">SCROLL</div>
+                <div class="scroll-hint-arrow">↓</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="scroll-layer">
+
+        <!-- ══════════════════════════════════════════════════════════
+             ABOUT BIO
+        ══════════════════════════════════════════════════════════ -->
+        <section id="about" class="about-section">
+
+            <!-- Full-width centred header -->
+            <div class="about-section-header">
+                <div class="about-section-rule"></div>
+                <span class="about-section-label">About Me</span>
+                <div class="about-section-rule"></div>
+            </div>
+
+            <div class="about-inner">
+
+                <!-- Avatar column -->
+                <div class="about-avatar-col">
+                    <div class="about-avatar-wrap">
+                        <img src="assets/profile.png" alt="Gan Kah Loke" class="about-avatar" />
+                        <div class="about-avatar-ring"></div>
+                    </div>
+
+                    <div class="about-name-line">GAN KAH LOKE</div>
+                    <span class="about-role-tag">Game Dev • Pixel Artist</span>
+
+                    <div class="about-location">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>
+                        Singapore
+                    </div>
+
+                    <div class="about-socials">
+                        <a href="https://www.linkedin.com/in/gan-kah-loke/" target="_blank" class="about-social-btn" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
+                        </a>
+                        <a href="https://www.instagram.com/pixinite_art/" target="_blank" class="about-social-btn" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" /></svg>
+                        </a>
+                        <a href="mailto:kahlokegan@gmail.com" class="about-social-btn" aria-label="Email">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+                        </a>
+                        <a href="https://infinitebreaker.itch.io/" target="_blank" class="about-social-btn" aria-label="itch.io">
+                            <svg width="18" height="18" viewBox="0 0 248 248" fill="currentColor"><path d="M31.99 1.365C21.287 7.542.2 31.945 0 38.524v9.015c0 11.498 10.775 21.538 20.544 21.538 11.772 0 21.623-9.761 21.623-21.46 0 11.699 9.55 21.46 21.322 21.46 11.771 0 21.095-9.761 21.095-21.46 0 11.699 10.143 21.46 21.914 21.46h.223c11.772 0 21.916-9.761 21.916-21.46 0 11.699 9.322 21.46 21.094 21.46 11.771 0 21.32-9.761 21.32-21.46 0 11.699 9.851 21.46 21.622 21.46 9.77 0 20.545-10.04 20.545-21.538v-9.015c-.2-6.579-21.287-30.982-31.99-37.16C181.669-.012 63.369-.149 31.99 1.365zM8 73.452v110.29h232V73.452H8zm26.06 18.732h179.88v72.826H34.06V92.184zm-8.06 82.826v35.71h248v-35.71H26zm35.714 9.284h60v17.142h-60v-17.142zm90.572 0h60v17.142h-60v-17.142z" /></svg>
+                        </a>
+                    </div>
+
+                    <div class="about-stats">
+                        <a href="about.html#experience" class="about-stat">
+                            <span class="about-stat-num">4+</span>
+                            <span class="about-stat-lbl">Freelance Clients</span>
+                        </a>
+                        <a href="about.html#experience" class="about-stat">
+                            <span class="about-stat-num">8+</span>
+                            <span class="about-stat-lbl">Years in Game Dev</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Text column -->
+                <div class="about-text-col">
+                    <div class="about-quote">
+                        " <span class="hl">Infinite</span> Worlds,
+                        <span class="glitch-word" id="breakWord" data-text="Breaking">Breaking</span>
+                        Limits. "
+                    </div>
+
+                    <!-- Drop-shadowed bio box -->
+                    <div class="about-bio-box">
+                        <p class="about-bio-text">
+                            Games are <span class="hl">gateways to boundless imagination.</span>
+                            Driven by the belief that great experiences should feel
+                            <span class="hl">limitless,</span> I strive to create
+                            <span class="hl">immersive worlds</span> that challenge
+                            <span class="hl">creativity, convention,</span> and
+                            <span class="hl">interactive play.</span>
+                        </p>
+                    </div>
+
+                    <!-- Primary skills -->
+                    <div class="about-skills-box">
+                        <div class="about-skills-header">
+                            <div class="about-skills-rule"></div>
+                            <span class="about-skills-label">Primary Skills</span>
+                            <div class="about-skills-rule"></div>
+                        </div>
+                        <div class="about-skills">
+                            <!-- Unity -->
+                            <div class="about-skill-tile">
+                                <div class="about-skill-tile-icon">
+                                    <img src="assets/logos/unity.png" alt="Unity" />
+                                </div>
+                                <span class="about-skill-tile-name">Unity</span>
+                            </div>
+                            <!-- C# -->
+                            <div class="about-skill-tile">
+                                <div class="about-skill-tile-icon">
+                                    <img src="assets/logos/csharp.png" alt="Aseprite" />
+                                </div>
+                                <span class="about-skill-tile-name">C Sharp</span>
+                            </div>
+                            <!-- GitHub -->
+                            <div class="about-skill-tile">
+                                <div class="about-skill-tile-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" /></svg>
+                                </div>
+                                <span class="about-skill-tile-name">GitHub</span>
+                            </div>
+                            <!-- Aseprite -->
+                            <div class="about-skill-tile">
+                                <div class="about-skill-tile-icon">
+                                    <img src="assets/logos/aseprite.png" alt="Aseprite" />
+                                </div>
+                                <span class="about-skill-tile-name">Aseprite</span>
+                            </div>
+                            <!-- Figma -->
+                            <div class="about-skill-tile">
+                                <div class="about-skill-tile-icon">
+                                    <img src="assets/logos/figma.png" alt="Figma" />
+                                </div>
+                                <span class="about-skill-tile-name">Figma</span>
+                            </div>
+                            <!-- Canva -->
+                            <div class="about-skill-tile">
+                                <div class="about-skill-tile-icon">
+                                    <img src="assets/logos/canva.png" alt="Figma" />
+                                </div>
+                                <span class="about-skill-tile-name">Canva</span>
+                            </div>
+                            <!-- Notion -->
+                            <div class="about-skill-tile">
+                                <div class="about-skill-tile-icon">
+                                    <img src="assets/logos/notion.png" alt="Figma" />
+                                </div>
+                                <span class="about-skill-tile-name">Notion</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-more-wrap">
+                        <!-- about-more-btn -->
+                        <a href="about.html" class="about-more-btn">
+                            <span>More About Me</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════
+        FEATURED PROJECTS
+        ══════════════════════════════════════════════════════════ -->
+        <section id="projects" class="projects-section">
+            <div class="projects-inner">
+
+                <div class="sec-header">
+                    <div class="sec-header-rule"></div>
+                    <span class="sec-header-label">Featured Projects</span>
+                    <div class="sec-header-rule"></div>
+                </div>
+
+                <div class="project-list">
+
+                    <!-- LIBRA -->
+                    <a href="libra.html" class="project-row">
+                        <div class="project-thumb">
+                            <img src="projects/games/libra/Libra_Thumbnail.png" alt="Libra" />
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-top">
+                                <div class="project-meta-left">
+                                    <div class="project-title">Libra</div>
+                                    <div class="project-roles">
+                                        <span class="project-role-badge">Product Manager</span>
+                                        <span class="project-role-badge">Design Lead</span>
+                                    </div>
+                                </div>
+                                <div class="project-meta-right">
+                                    <span class="project-date">Sep 2024 to Apr 2025</span>
+                                    <span class="project-genre-pill">Symmetry Puzzle · PC</span>
+                                </div>
+                            </div>
+                            <div class="project-info-bottom">
+                                <div class="project-skill-icons">
+                                    <span class="proj-skill-chip proj-skill-chip--img">
+                                        <img src="assets/logos/unity.png" alt="Unity" />
+                                        Unity
+                                    </span>
+                                    <span class="proj-skill-chip proj-skill-chip--img">
+                                        <img src="assets/logos/csharp.png" alt="C#" />
+                                        C#
+                                    </span>
+                                </div>
+                                <span class="project-arrow">→</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- ACE -->
+                    <a href="ace.html" class="project-row">
+                        <div class="project-thumb">
+                            <img src="projects/games/ace/Ace_Thumbnail.png" alt="Ace" />
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-top">
+                                <div class="project-meta-left">
+                                    <div class="project-title">Ace</div>
+                                    <div class="project-roles">
+                                        <span class="project-role-badge">Programmer</span>
+                                    </div>
+                                </div>
+                                <div class="project-meta-right">
+                                    <span class="project-date">Jan 2024 to Apr 2024</span>
+                                    <span class="project-genre-pill">Action Platformer · PC</span>
+                                </div>
+                            </div>
+                            <div class="project-info-bottom">
+                                <div class="project-skill-icons">
+                                    <span class="proj-skill-chip proj-skill-chip--img">
+                                        <img src="assets/logos/unity.png" alt="Unity" />
+                                        Unity
+                                    </span>
+                                    <span class="proj-skill-chip proj-skill-chip--img">
+                                        <img src="assets/logos/csharp.png" alt="C#" />
+                                        C#
+                                    </span>
+                                </div>
+                                <span class="project-arrow">→</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- SERVEEM -->
+                    <a href="serveem.html" class="project-row">
+                        <div class="project-thumb">
+                            <img src="projects/games/serveem/ServeEM_Thumbnail.png" alt="ServeEM" />
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-top">
+                                <div class="project-meta-left">
+                                    <div class="project-title">ServeEM</div>
+                                    <div class="project-roles">
+                                        <span class="project-role-badge">Solo Developer</span>
+                                    </div>
+                                </div>
+                                <div class="project-meta-right">
+                                    <span class="project-date">Dec 2020 – Jan 2021</span>
+                                    <span class="project-genre-pill">Arcade · Android Mobile</span>
+                                </div>
+                            </div>
+                            <div class="project-info-bottom">
+                                <div class="project-skill-icons">
+                                    <span class="proj-skill-chip proj-skill-chip--img">
+                                        <img src="assets/logos/unity.png" alt="Unity" />
+                                        Unity
+                                    </span>
+                                    <span class="proj-skill-chip proj-skill-chip--img">
+                                        <img src="assets/logos/csharp.png" alt="C#" />
+                                        C#
+                                    </span>
+                                    <span class="proj-skill-chip proj-skill-chip--img">
+                                        <img src="assets/logos/aseprite.png" alt="Aseprite" />
+                                        Aseprite
+                                    </span>
+                                    <span class="proj-skill-chip">Android</span>
+                                </div>
+                                <span class="project-arrow">→</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="projects-footer">
+                    <!-- projects-all-btn -->
+                    <a href="projects.html" class="projects-all-btn">
+                        <span>View All Works</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════
+         CONTACT
+        ══════════════════════════════════════════════════════════ -->
+
+        <section id="contact" class="contact-section">
+            <div class="contact-inner">
+
+                <div class="sec-header">
+                    <div class="sec-header-rule"></div>
+                    <span class="sec-header-label">Contact</span>
+                    <div class="sec-header-rule"></div>
+                </div>
+
+                <div class="contact-container">
+
+                    <!-- Left card -->
+                    <div class="contact-card">
+                        <div>
+                            <!--<p class="contact-kicker">LET'S WORK TOGETHER</p>-->
+                            <h3 class="contact-heading">LET'S CHAT!</h3>
+                            <p class="contact-description">Open to game collaborations and freelance projects!</p>
+                        </div>
+
+                        <div class="contact-rule"></div>
+
+                        <div class="quest-board">
+                            <div class="quest-badge">
+                                <span class="quest-dot"></span>
+                                ACTIVE QUEST
+                            </div>
+                            <div class="quest-title">[ SEEKING INTERNSHIP ]</div>
+                            <p class="quest-body">Looking to start a journey into the gaming industry to learn from experienced teams and contribute meaningfully from day one.</p>
+                            <div class="quest-contacts">
+                                <div class="qc-row">
+                                    <span class="qc-icon">✉</span>
+                                    <span class="qc-label">EMAIL</span>
+                                    <a class="qc-val">kahlokegan@gmail.com</a>
+                                </div>
+                                <div class="qc-row">
+                                    <span class="qc-icon">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" /></svg>
+                                    </span>
+                                    <span class="qc-label">LOCATION</span>
+                                    <span class="qc-val">Singapore</span>
+                                </div>
+                                <div class="qc-row">
+                                    <span class="qc-icon">⬡</span>
+                                    <span class="qc-label">MODE</span>
+                                    <span class="qc-val">On-Site · Remote · Hybrid</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right form -->
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label>NAME</label>
+                            <input type="text" name="name" placeholder="Your name" required />
+                        </div>
+                        <div class="form-group">
+                            <label>EMAIL</label>
+                            <input type="email" name="email" placeholder="Your email" required />
+                        </div>
+                        <div class="form-group">
+                            <label>SUBJECT</label>
+                            <input type="text" name="subject" placeholder="What's this about?" required />
+                        </div>
+                        <div class="form-group">
+                            <label>MESSAGE</label>
+                            <textarea rows="5" name="message" placeholder="Drop a message... say hi!" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span id="submitText">SEND MESSAGE →</span>
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <p class="footer-copy">GAN KAH LOKE © 2026</p>
+                <!--<p class="footer-sub">Game Designer • Game Developer • Pixel Artist</p>-->
+            </div>
+            <nav class="footer-nav">
+                <a href="#">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="projects.html">WORKS</a>
+                <a href="artworks.html">ART</a>
+                <a href="index.html#contact">CONTACT</a>
+            </nav>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/gan-kah-loke/" target="_blank" class="footer-icon-btn" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F0F8FF">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/pixinite_art/?hl=en" target="_blank" class="footer-icon-btn" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0F8FF" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.5" cy="6.5" r="1" fill="#F0F8FF" />
+                    </svg>
+                </a>
+                <a href="mailto:kahlokegan@gmail.com" class="footer-icon-btn" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0F8FF" stroke-width="2">
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <path d="M3 7l9 6 9-6" />
+                    </svg>
+                </a>
+                <a href="https://infinitebreaker.itch.io/" target="_blank" class="footer-icon-btn" aria-label="itch.io">
+                    <svg width="16" height="16" viewBox="0 0 248 248" fill="#F0F8FF"><path d="M31.99 1.365C21.287 7.542.2 31.945 0 38.524v9.015c0 11.498 10.775 21.538 20.544 21.538 11.772 0 21.623-9.761 21.623-21.46 0 11.699 9.55 21.46 21.322 21.46 11.771 0 21.095-9.761 21.095-21.46 0 11.699 10.143 21.46 21.914 21.46h.223c11.772 0 21.916-9.761 21.916-21.46 0 11.699 9.322 21.46 21.094 21.46 11.771 0 21.32-9.761 21.32-21.46 0 11.699 9.851 21.46 21.622 21.46 9.77 0 20.545-10.04 20.545-21.538v-9.015c-.2-6.579-21.287-30.982-31.99-37.16C181.669-.012 63.369-.149 31.99 1.365zM8 73.452v110.29h232V73.452H8zm26.06 18.732h179.88v72.826H34.06V92.184zm-8.06 82.826v35.71h248v-35.71H26zm35.714 9.284h60v17.142h-60v-17.142zm90.572 0h60v17.142h-60v-17.142z" /></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

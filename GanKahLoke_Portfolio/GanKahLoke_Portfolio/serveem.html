@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServeEM — Project Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="serveem.css" />
+    <link rel="icon" href="assets/InfiniteBreaker_Logo.png" type="image/png">
+</head>
+
+<body>
+
+    <!-- LIGHTBOX -->
+    <div class="se-lightbox" id="btLightbox">
+        <div class="se-lightbox-inner" id="btLightboxInner">
+            <button class="se-lightbox-close" id="btLightboxClose" aria-label="Close">✕</button>
+            <img id="btLightboxImg" src="" alt="" />
+            <p class="se-lightbox-caption" id="btLightboxCaption"></p>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-logo">
+            <img alt="Gan Kah Loke Logo" />
+        </a>
+        <button class="nav-burger" id="navBurger">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="projects.html" class="active">WORKS</a></li>
+            <li><a href="artworks.html">ART</a></li>
+            <li><a href="index.html#contact">CONTACT</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="assets/Gan_Kah_Loke_Resume.pdf"
+               download="Gan_Kah_Loke_Resume.pdf"
+               target="_blank"
+               class="nav-cta nav-resume">
+                <img src="assets/KeyIcon.png" alt="" />
+                <span>GET RESUME</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="page-content">
+
+        <!-- ═══ TOP: TITLE + TRAILER ═══ -->
+        <section class="se-top-block">
+            <div class="se-title-bar">
+
+                <!-- Top navigation row -->
+                <div class="se-top-nav">
+                    <a class="se-project-nav se-project-nav-prev" id="prevProjectBtn">
+                        ← Previous
+                    </a>
+
+                    <div class="se-breadcrumb" id="projectCategory">
+                        GAME PROJECT
+                    </div>
+
+                    <a class="se-project-nav se-project-nav-next" id="nextProjectBtn">
+                        Next →
+                    </a>
+                </div>
+
+                <!-- Centered title -->
+                <h1 class="se-hero-title" id="projectTitle">
+                    SERVEEM
+                </h1>
+            </div>
+
+            <div class="se-trailer-wrap se-fade">
+                <video class="se-trailer-video"
+                       src="projects/games/serveem/gameplay.mp4"
+                       controls
+                       preload="metadata"
+                       poster="projects/games/serveem/gameplay_ss.png"></video>
+            </div>
+        </section>
+
+        <!-- ═══ BOTTOM: DESC (left) + INFO PANEL (right) ═══ -->
+        <section class="se-bottom-block">
+
+            <!-- ── LEFT: description + thought process ── -->
+            <div class="se-desc-col">
+
+                <!-- STATUS + INSTALL stacked -->
+                <div class="se-status-install-block se-fade">
+                    <div class="se-status-bar">
+                        <span class="se-status-dot se-status-dot--maintenance"></span>
+                        <span class="se-status-label">UNDER MAINTENANCE</span>
+                        <span class="se-status-detail">— Currently unavailable on Google Play</span>
+                    </div>
+                    <div class="se-apk-card">
+                        <div class="se-apk-card-info">
+                            <span class="se-apk-card-label">Playable Build</span>
+                            <p class="se-apk-card-title">TEST BUILD V0.2.7</p>
+                            <p class="se-apk-card-desc">Play an older build version on Android through direct APK installation.</p>
+                        </div>
+                        <a href="projects/games/serveem/Serve_EM_Test_v0.2.7.apk"
+                           download="Serve_EM_Test_v0.2.7.apk"
+                           class="se-apk-btn">
+                            <span class="se-apk-btn-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.523 15.341a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-9.046 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM2.255 9h19.49A10.54 10.54 0 0 0 20.6 6.594L22.5 4.7a.75.75 0 0 0-1.06-1.06l-1.745 1.744A9.96 9.96 0 0 0 12 3a9.96 9.96 0 0 0-7.695 2.384L2.56 3.64A.75.75 0 0 0 1.5 4.7l1.9 1.894A10.54 10.54 0 0 0 2.255 9zM2 11a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-1h.5A2.5 2.5 0 0 0 6 13.5V11H2zm16 0v2.5a2.5 2.5 0 0 0 2.5 2.5H21v1a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1h-4zm-12 0v5.5A2.5 2.5 0 0 0 8.5 19h7a2.5 2.5 0 0 0 2.5-2.5V11H6z" />
+                                </svg>
+                            </span>
+                            <span>APK FILE</span>
+                            <span class="se-apk-btn-size">25.7 MB</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- OVERVIEW -->
+                <div class="se-content-section se-fade">
+                    <p class="se-label-small">Overview</p>
+                    <p class="se-overview-desc">
+                        Serve a super hungry cat by fulfilling its bizarre burger orders while surviving a stall where shutters close unexpectedly, ingredient colors get distorted, and buttons swap places in chaotic fast-paced gameplay.
+                    </p>
+                </div>
+
+                <!-- WHAT I BUILT -->
+                <div class="se-content-section se-fade">
+                    <p class="se-label-small">What I Built</p>
+                    <div class="se-what-grid">
+                        <div class="se-what-card">
+                            <span class="se-what-icon">⚙️</span>
+                            <div>
+                                <p class="se-what-title">Core Gameplay Systems</p>
+                                <p class="se-what-body">Designed and coded the full order-generation loop in C# — randomised ingredient combinations, a timed serving window, and a score multiplier that rewards consecutive correct orders.</p>
+                            </div>
+                        </div>
+                        <div class="se-what-card">
+                            <span class="se-what-icon">🐛</span>
+                            <div>
+                                <p class="se-what-title">The Malfunction Mechanic</p>
+                                <p class="se-what-body">Designed a "broken stall" system that randomly swaps ingredients mid-order, forcing players to stay alert on every serve. What started as a playtesting observation became the game's signature twist.</p>
+                            </div>
+                        </div>
+                        <div class="se-what-card">
+                            <span class="se-what-icon">🎨</span>
+                            <div>
+                                <p class="se-what-title">All Pixel Art Assets</p>
+                                <p class="se-what-body">Drew every sprite from scratch in Aseprite — the cat character, all burger ingredients, UI frames, and animation frames — while iterating art and code in parallel so readability issues surfaced immediately.</p>
+                            </div>
+                        </div>
+                        <div class="se-what-card">
+                            <span class="se-what-icon">📱</span>
+                            <div>
+                                <p class="se-what-title">Mobile Build & Publishing</p>
+                                <p class="se-what-body">Configured the Android build pipeline end-to-end in Unity, handled signing and APK packaging, and navigated the Google Play Console publishing flow for the first time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THOUGHT PROCESS -->
+                <div class="se-content-section se-fade">
+                    <p class="se-label-small">Thought Process</p>
+
+                    <div class="se-thought-item">
+                        <div class="se-thought-marker">
+                            <span class="se-thought-dot"></span>
+                            <span class="se-thought-line"></span>
+                        </div>
+                        <div class="se-thought-body">
+                            <p class="se-thought-title">Start with one mechanic, not five</p>
+                            <p class="se-thought-text">
+                                With a month on the clock my first instinct was to cut. I landed on a single verb — <em>serve</em> — because one mechanic made deep through randomisation would be more satisfying than several shallow ones. The cat customer gave the stakes a personality without needing any extra systems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="se-thought-item">
+                        <div class="se-thought-marker">
+                            <span class="se-thought-dot"></span>
+                            <span class="se-thought-line"></span>
+                        </div>
+                        <div class="se-thought-body">
+                            <p class="se-thought-title">Turn a playtest problem into a feature</p>
+                            <p class="se-thought-text">
+                                Early playtesting showed the order loop felt predictable after a few rounds. Instead of adding new order types, I introduced the malfunction mechanic — random ingredient mix-ups the player must catch and correct. It reuses the existing system entirely while adding a new layer of tension. The "bug" became the hook.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="se-thought-item">
+                        <div class="se-thought-marker">
+                            <span class="se-thought-dot"></span>
+                            <span class="se-thought-line"></span>
+                        </div>
+                        <div class="se-thought-body">
+                            <p class="se-thought-title">Art and code in parallel, not sequence</p>
+                            <p class="se-thought-text">
+                                I drew assets alongside coding rather than after — if a sprite wasn't readable at a glance it got redrawn immediately. Working both roles at once meant visual and interaction feedback loops stayed tight, and I never hit the end of development with a pile of unreadable art to redo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="se-thought-item">
+                        <div class="se-thought-marker">
+                            <span class="se-thought-dot"></span>
+                        </div>
+                        <div class="se-thought-body">
+                            <p class="se-thought-title">Scope is the real design skill</p>
+                            <p class="se-thought-text">
+                                The hardest calls were what to cut. Trello kept remaining tasks visible against the deadline so I could make those calls deliberately rather than by running out of time. I shipped a complete, polished experience over a technically impressive but unfinished one — that priority is something I carry into every project now.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REFLECTION -->
+                <div class="se-content-section se-fade">
+                    <p class="se-label-small">Reflection</p>
+                    <div class="se-reflection-card">
+                        <p class="se-overview-desc">
+                            Owning every role taught me where the real bottlenecks are. For me it wasn't code or art — it was <strong>decision fatigue from constant context-switching</strong>. Trello helped, but the bigger lesson was that ruthless scoping is the most critical skill in solo development.
+                        </p>
+                        <p class="se-overview-desc">
+                            This project gave me an end-to-end map of what shipping actually requires. Every team project since, I've contributed more deliberately because I understand what each role genuinely costs.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ── RIGHT: info panel ── -->
+            <aside class="se-info-panel">
+
+                <div class="se-meta-group se-fade">
+                    <p class="se-meta-group-label">Roles</p>
+                    <p class="se-meta-group-value">Solo Developer</p>
+                    <p class="se-meta-group-sub">Game Designer · Pixel Artist</p>
+                </div>
+
+                <div class="se-meta-divider"></div>
+
+                <div class="se-meta-group se-fade">
+                    <p class="se-meta-group-label">Tags</p>
+                    <div class="se-tag-list">
+                        <span class="se-tag se-tag--genre">Arcade</span>
+                        <span class="se-tag se-tag--plat">Android</span>
+                    </div>
+                </div>
+
+                <div class="se-meta-divider"></div>
+
+                <div class="se-meta-group se-fade">
+                    <p class="se-meta-group-label">Date</p>
+                    <p class="se-meta-group-value">Dec 2020 – Jan 2021</p>
+                    <p class="se-meta-group-sub">~1 Month</p>
+                </div>
+
+                <div class="se-meta-divider"></div>
+
+                <div class="se-meta-group se-fade">
+                    <p class="se-meta-group-label">Engine & Platform</p>
+                    <div class="se-tech-list">
+                        <span class="se-tech-pill">
+                            <img src="assets/logos/unity.png" alt="" class="se-tech-logo">
+                            UNITY 2D
+                        </span>
+                        <span class="se-tech-pill">
+                            <svg width="13" height="13" viewBox="0 0 32 32" fill="currentColor"><path d="M26.186 8.343a13.333 13.333 0 1 0-20.37 0L4 10.667h24l-1.814-2.324zM11.333 17.333a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm9.334 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" /></svg>
+                            ANDROID
+                        </span>
+                    </div>
+                </div>
+
+                <div class="se-meta-divider"></div>
+
+                <div class="se-meta-group se-fade">
+                    <p class="se-meta-group-label">Tools</p>
+                    <div class="se-tech-list">
+                        <span class="se-tech-pill">
+                            <img src="assets/logos/drawio.png" alt="" class="se-tech-logo">
+                            DRAW.IO
+                        </span>
+                        <span class="se-tech-pill">
+                            <img src="assets/logos/csharp.png" alt="" class="se-tech-logo">
+                            C#
+                        </span>
+                        <span class="se-tech-pill">
+                            <img src="assets/logos/aseprite.png" alt="" class="se-tech-logo">
+                            ASEPRITE
+                        </span>
+                        <span class="se-tech-pill">
+                            <img src="assets/logos/trello.png" alt="" class="se-tech-logo">
+                            TRELLO
+                        </span>
+                    </div>
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <p class="footer-copy">GAN KAH LOKE © 2026</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html#">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="projects.html">WORKS</a>
+                <a href="artworks.html">ART</a>
+                <a href="index.html#contact">CONTACT</a>
+            </nav>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/gan-kah-loke/" target="_blank" class="footer-icon-btn" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#F0F8FF">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/pixinite_art/?hl=en" target="_blank" class="footer-icon-btn" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0F8FF" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.5" cy="6.5" r="1" fill="#F0F8FF" />
+                    </svg>
+                </a>
+                <a href="mailto:kahlokegan@gmail.com" class="footer-icon-btn" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F0F8FF" stroke-width="2">
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <path d="M3 7l9 6 9-6" />
+                    </svg>
+                </a>
+                <a href="https://infinitebreaker.itch.io/" target="_blank" class="footer-icon-btn" aria-label="itch.io">
+                    <svg width="16" height="16" viewBox="0 0 248 248" fill="#F0F8FF"><path d="M31.99 1.365C21.287 7.542.2 31.945 0 38.524v9.015c0 11.498 10.775 21.538 20.544 21.538 11.772 0 21.623-9.761 21.623-21.46 0 11.699 9.55 21.46 21.322 21.46 11.771 0 21.095-9.761 21.095-21.46 0 11.699 10.143 21.46 21.914 21.46h.223c11.772 0 21.916-9.761 21.916-21.46 0 11.699 9.322 21.46 21.094 21.46 11.771 0 21.32-9.761 21.32-21.46 0 11.699 9.851 21.46 21.622 21.46 9.77 0 20.545-10.04 20.545-21.538v-9.015c-.2-6.579-21.287-30.982-31.99-37.16C181.669-.012 63.369-.149 31.99 1.365zM8 73.452v110.29h232V73.452H8zm26.06 18.732h179.88v72.826H34.06V92.184zm-8.06 82.826v35.71h248v-35.71H26zm35.714 9.284h60v17.142h-60v-17.142zm90.572 0h60v17.142h-60v-17.142z" /></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const burger = document.getElementById('navBurger');
+        const navbar = document.getElementById('navbar');
+        if (burger) {
+        burger.addEventListener('click', () => navbar.classList.toggle('active'));
+        document.querySelectorAll('.nav-links a').forEach(l =>
+        l.addEventListener('click', () => navbar.classList.remove('active'))
+        );
+        }
+
+        document.documentElement.classList.add('fonts-loading');
+        document.fonts.ready.then(() => {
+        document.documentElement.classList.replace('fonts-loading', 'fonts-loaded');
+        });
+
+        (function lightbox() {
+        const lb = document.getElementById('btLightbox');
+        const lbImg = document.getElementById('btLightboxImg');
+        const lbCap = document.getElementById('btLightboxCaption');
+        const lbClose = document.getElementById('btLightboxClose');
+        let zoomed = false, zoomScale = 2.4;
+        function openLightbox(src, caption) {
+        lbImg.src = src; lbImg.style.transform = 'scale(1)';
+        lbImg.classList.remove('zoomed'); lbCap.textContent = caption || '';
+        zoomed = false; lb.classList.add('active'); document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+        lb.classList.remove('active'); document.body.style.overflow = '';
+        zoomed = false; lbImg.style.transform = 'scale(1)';
+        lbImg.classList.remove('zoomed'); lbImg.src = '';
+        }
+        lbImg.addEventListener('click', e => {
+        e.stopPropagation(); zoomed = !zoomed;
+        lbImg.style.transform = zoomed ? `scale(${zoomScale})` : 'scale(1)';
+        lbImg.classList.toggle('zoomed', zoomed);
+        });
+        lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+        lbClose.addEventListener('click', closeLightbox);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+        document.querySelectorAll('[data-lightbox="true"]').forEach(el => {
+        el.style.cursor = 'zoom-in';
+        el.addEventListener('click', () => {
+        const src = el.dataset.src || el.src || el.querySelector('img')?.src;
+        const cap = el.dataset.caption || el.alt || '';
+        if (src) openLightbox(src, cap);
+        });
+        });
+        })();
+
+        (function () {
+        const content = document.querySelector('.page-content');
+        if (!content) return;
+        content.style.opacity = '0';
+        content.style.transition = 'opacity 0.45s ease';
+        window.addEventListener('load', () =>
+        requestAnimationFrame(() => {
+        navbar?.classList.remove('nav-exit');
+        content.style.opacity = '1';
+        })
+        );
+        document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('javascript') ||
+        a.target === '_blank' || a.hasAttribute('download')) return;
+        a.addEventListener('click', e => {
+        const url = new URL(a.href, window.location.href);
+        const samePage = url.pathname === window.location.pathname && url.hash === window.location.hash;
+        if (samePage) return;
+        e.preventDefault();
+        navbar?.classList.add('nav-exit');
+        content.style.opacity = '0';
+        setTimeout(() => { window.location.href = a.href; }, 450);
+        });
+        });
+        })();
+
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+        document.querySelectorAll('.se-fade').forEach(el => observer.observe(el));
+
+        /* ─────────────────────────────────────────────
+   CATEGORY LABEL
+───────────────────────────────────────────── */
+
+const CATEGORY_LABELS = {
+    game: "GAME PROJECT",
+    personal: "PERSONAL PROJECT",
+    analysis: "GAME ANALYSIS",
+    leveldesign: "LEVEL DESIGN"
+};
+
+document.getElementById("projectCategory").textContent =
+    CATEGORY_LABELS[currentProject.dimension] || "PROJECT";
+
+/* ─────────────────────────────────────────────
+   PREV / NEXT PROJECT NAVIGATION
+───────────────────────────────────────────── */
+
+const currentIndex = PROJECTS.findIndex(
+    p => p.title === currentProject.title
+);
+
+const prevProject =
+    PROJECTS[(currentIndex - 1 + PROJECTS.length) % PROJECTS.length];
+
+const nextProject =
+    PROJECTS[(currentIndex + 1) % PROJECTS.length];
+
+const prevBtn = document.getElementById("prevProjectBtn");
+const nextBtn = document.getElementById("nextProjectBtn");
+
+function getProjectLink(project) {
+    return project.links.detail || project.links.pdf;
+}
+
+prevBtn.href = getProjectLink(prevProject);
+nextBtn.href = getProjectLink(nextProject);
+    </script>
+
+</body>
+</html>
