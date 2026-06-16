@@ -110,7 +110,7 @@
                             <div class="se-info-meta">
                                 <div class="se-info-row">
                                     <span class="se-info-key">TEAM</span>
-                                    <span class="se-info-val">Gan Kah Loke</span>
+                                    <span class="se-info-val">InfiniteBreaker <em class="se-info-note">(solo)</em></span>
                                 </div>
                                 <div class="se-info-row">
                                     <span class="se-info-key">ROLES</span>
@@ -148,31 +148,55 @@
         <!-- ═══ ACTION BAR — status + download, below hero ═══ -->
         <div class="se-action-bar-wrap">
             <div class="se-action-bar">
-                <div class="se-status-bar">
-                    <span class="se-status-dot se-status-dot--maintenance"></span>
-                    <span class="se-status-label">UNDER MAINTENANCE</span>
-                    <span class="se-status-detail">Unavailable on Google Play</span>
-                </div>
-                <div class="se-apk-banner se-apk-banner--stacked">
-                    <div class="se-apk-btn-text">
-                        <span class="se-apk-btn-title">ServeEM v0.2.7</span>
-                        <span class="se-apk-btn-sub">Android APK · Sideload required</span>
-                    </div>
-                    <div class="se-apk-btn-group">
-                        <a href="projects/games/serveem/Serve_EM_Test_v0.2.7.apk"
-                           download="Serve_EM_Test_v0.2.7.apk"
-                           class="se-apk-btn se-apk-btn--full">
-                            <!-- Android icon -->
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
-                                <path d="M17.523 15.341a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-9.046 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM2.255 9h19.49A10.54 10.54 0 0 0 20.6 6.594L22.5 4.7a.75.75 0 0 0-1.06-1.06l-1.745 1.744A9.96 9.96 0 0 0 12 3a9.96 9.96 0 0 0-7.695 2.384L2.56 3.64A.75.75 0 0 0 1.5 4.7l1.9 1.894A10.54 10.54 0 0 0 2.255 9zM2 11a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-1h.5A2.5 2.5 0 0 0 6 13.5V11H2zm16 0v2.5a2.5 2.5 0 0 0 2.5 2.5H21v1a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1h-4zm-12 0v5.5A2.5 2.5 0 0 0 8.5 19h7a2.5 2.5 0 0 0 2.5-2.5V11H6z" />
-                            </svg>
-                            <span class="se-apk-btn-label">
-                                <span class="se-apk-btn-platform">Download APK</span>
-                                <span class="se-apk-btn-filesize">25.7 MB</span>
-                            </span>
-                        </a>
+
+                <!-- LEFT: solo dev -->
+                <div class="se-action-bar-left">
+                    <div class="se-team-row">
+                        <p class="se-team-label">Team</p>
+                        <div class="se-team-members">
+
+                            <div class="se-team-member-h se-team-member-h--you">
+                                <div class="se-team-avatar">
+                                    <img src="assets/chubbycat.png" alt="Gan Kah Loke" />
+                                </div>
+                                <div class="se-team-member-h-info">
+                                    <span class="se-team-name">Gan Kah Loke</span>
+                                    <span class="se-team-role">Game Developer</span>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+
+                <!-- RIGHT: status banner on top, download below -->
+                <div style="display:flex; flex-direction:column; gap:12px; grid-column:2;">
+                    <div class="se-status-bar">
+                        <span class="se-status-dot se-status-dot--maintenance"></span>
+                        <span class="se-status-label">UNDER MAINTENANCE</span>
+                        <span class="se-status-detail">Unavailable on Google Play</span>
+                    </div>
+                    <div class="se-apk-banner se-apk-banner--stacked">
+                        <div class="se-apk-btn-text">
+                            <span class="se-apk-btn-title">DOWNLOAD: ServeEM v0.2.7</span>
+                            <span class="se-apk-btn-sub">Android APK · Sideload required</span>
+                        </div>
+                        <div class="se-apk-btn-group">
+                            <a href="projects/games/serveem/Serve_EM_Test_v0.2.7.apk"
+                               download="Serve_EM_Test_v0.2.7.apk"
+                               class="se-apk-btn se-apk-btn--full">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+                                    <path d="M17.523 15.341a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-9.046 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM2.255 9h19.49A10.54 10.54 0 0 0 20.6 6.594L22.5 4.7a.75.75 0 0 0-1.06-1.06l-1.745 1.744A9.96 9.96 0 0 0 12 3a9.96 9.96 0 0 0-7.695 2.384L2.56 3.64A.75.75 0 0 0 1.5 4.7l1.9 1.894A10.54 10.54 0 0 0 2.255 9zM2 11a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-1h.5A2.5 2.5 0 0 0 6 13.5V11H2zm16 0v2.5a2.5 2.5 0 0 0 2.5 2.5H21v1a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1h-4zm-12 0v5.5A2.5 2.5 0 0 0 8.5 19h7a2.5 2.5 0 0 0 2.5-2.5V11H6z" />
+                                </svg>
+                                <span class="se-apk-btn-label">
+                                    <span class="se-apk-btn-platform">Download APK</span>
+                                    <span class="se-apk-btn-filesize">25.7 MB</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 

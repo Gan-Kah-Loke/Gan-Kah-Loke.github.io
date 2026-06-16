@@ -73,7 +73,7 @@ const PROJECTS = [
         platform:  "PC",
         date:      "Jan 2020 – Sep 2020",
         dateSort:  "2020-09",
-        roles:     ["Multi-Disciplinary"],
+        roles:     ["Game Programmer", "Game Designer"],
         desc:      "A pedagogical tower defense game that transforms study habits and learning strategies into gameplay mechanics, tasking players with defending the academy through strategic planning and resource management.",
         image:     "projects/games/bontress/Bon-Tress_Thumbnail.png",
         status:    "mvp",
@@ -85,7 +85,7 @@ const PROJECTS = [
         dimension: "analysis",
         date:      "2023",
         dateSort:  "2023-11-24",
-        desc:      "An analysis of Ib focusing on environmental storytelling, player interaction design, and the psychological techniques used to create tension, uncertainty, and emotional immersion.",
+        desc:      "An analysis of Ib focusing on environmental storytelling, player interaction design, and the psychological techniques used to create tension, uncertainty, and emotional immersion in players.",
         image:     "projects/gameanalysis/ib/ibanalysisthumbnail.png",
         links:     { pdf: "projects/gameanalysis/ib/Game_Analysis-Ib.pdf" }
     },

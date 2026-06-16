@@ -5,11 +5,12 @@
    2. Hero Header (breadcrumb + title)
    3. Steam Hero (media column + info column)
    4. Action Bar (status + APK download)
-   5. Description Section (goals, panels, what-I-did)
-   6. What I Did — layout variants (split / row / mockups)
-   7. Takeaways Accordion
-   8. Scroll Reveal
-   9. Responsive
+   5. Team Members Row
+   6. Description Section (goals, panels, what-I-did)
+   7. What I Did — layout variants (split / row / mockups)
+   8. Takeaways Accordion
+   9. Scroll Reveal
+   10. Responsive
 ═══════════════════════════════════════════════════════════════ */
 
 
@@ -282,9 +283,6 @@
 }
 
 /* ── RIGHT: info column ───────────────────────────── */
-/* Uses align-self: start; pushed down via margin-top so the
-   top of this card lines up with the top of the media card
-   (offsets the title header that sits above the left column). */
 .se-right-col {
     display: flex;
     flex-direction: column;
@@ -329,8 +327,6 @@
     box-shadow: 0 16px 60px rgba(0,0,0,0.7), 0 4px 16px rgba(180,50,50,0.1);
     overflow: hidden;
     box-sizing: border-box;
-    /* = gap(12px) + breadcrumb line (~14px) + gap(4px) + title line (~clamp ~45px) + 4px buffer = ~79px
-       Adjust this value if your font renders slightly differently. */
     margin-top: 0;
     align-self: start;
 }
@@ -379,9 +375,9 @@
     flex-wrap: wrap;
 }
 
-    .se-info-row--tight {
-        gap: 16px;
-    }
+.se-info-row--tight {
+    gap: 16px;
+}
 
 .se-info-note {
     font-style: italic;
@@ -468,7 +464,7 @@
 .se-action-bar-wrap {
     background: #0e0303;
     border-bottom: 1px solid rgba(180,50,50,0.15);
-    padding: 20px var(--se-gutter, 40px);
+    padding: 20px var(--se-gutter, 40px) 28px;
 }
 
 /* Mirror the hero grid so the action bar lines up under the left col */
@@ -476,8 +472,8 @@
     max-width: var(--se-content-width, 1400px);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 2fr 1fr;
     gap: 24px;
+    grid-template-columns: 3fr 2fr;
     align-items: start;
 }
 
@@ -487,6 +483,10 @@
     gap: 10px;
     grid-column: 1;
 }
+
+    .se-action-bar-left .se-team-row {
+        padding-top: 0;
+    }
 
 /* Status bar */
 .se-status-bar {
@@ -667,7 +667,159 @@
 
 
 /* ══════════════════════════════════════════════════════
-   5. DESCRIPTION SECTION — goals, text panels, what-I-did
+   5. TEAM MEMBERS ROW — below action bar, inside wrap
+══════════════════════════════════════════════════════ */
+.se-team-row {
+    max-width: var(--se-content-width, 1400px);
+    margin: 0 auto;
+    padding: 24px 0 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.se-team-label {
+    font-family: 'Inter', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(240,248,255,0.35);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+    /* Subtle rule extending from the label */
+    .se-team-label::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(180,50,50,0.25), rgba(180,50,50,0));
+        border-radius: 1px;
+    }
+
+/* Horizontal member card */
+.se-team-members {
+    flex-direction: unset;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 24px;
+    justify-items: start;
+}
+
+.se-team-member-h {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.se-team-member-h--you .se-team-avatar {
+    border-color: rgba(180,50,50,0.65);
+    box-shadow: 0 0 10px rgba(180,50,50,0.2);
+}
+
+.se-team-member-h-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.se-team-member-h--you .se-team-name {
+    color: #e0b0b0;
+}
+
+.se-team-member-h--you .se-team-role {
+    color: #c94040;
+}
+
+.se-team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    width: 76px;
+}
+
+/* Circle avatar */
+.se-team-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(180,50,50,0.3);
+    background: #1a0505;
+    flex-shrink: 0;
+    transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+    cursor: default;
+}
+
+    .se-team-avatar:hover {
+        border-color: rgba(180,50,50,0.65);
+        box-shadow: 0 0 14px rgba(180,50,50,0.28);
+        transform: translateY(-2px);
+    }
+
+    .se-team-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+/* Initials fallback — used when no photo is available.
+   Add class se-team-avatar--initials to .se-team-avatar and put
+   a 2-letter string directly inside instead of an <img>. */
+.se-team-avatar--initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Jersey 25', monospace;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: #c08080;
+    user-select: none;
+}
+
+/* Name + role text */
+.se-team-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(240,248,255,0.82);
+    text-align: center;
+    line-height: 1.35;
+}
+
+.se-team-role {
+    font-family: 'Inter', monospace;
+    font-size: 9px;
+    letter-spacing: 0.6px;
+    color: #b07070;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+/* "You" badge — highlight the portfolio owner's card */
+.se-team-member--you .se-team-avatar {
+    border-color: rgba(180,50,50,0.65);
+    box-shadow: 0 0 10px rgba(180,50,50,0.2);
+}
+
+.se-team-member--you .se-team-name {
+    color: #e0b0b0;
+}
+
+.se-team-member--you .se-team-role {
+    color: #c94040;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   6. DESCRIPTION SECTION — goals, text panels, what-I-did
 ══════════════════════════════════════════════════════ */
 .se-desc-section {
     background: #0a0101;
@@ -682,8 +834,7 @@
     gap: 0;
 }
 
-/* Section block + divider between blocks (Project Goals / What I Did / What I Learned).
-   Made more prominent: thicker, brighter, with a soft glow. */
+/* Section block + divider between blocks */
 .se-content-section {
     padding-bottom: 60px;
     margin-bottom: 60px;
@@ -698,9 +849,6 @@
         padding-bottom: 0;
     }
 
-/* Section label (e.g. "Project Goals", "What I Did", "What I Learned").
-   Made more prominent: larger, bolder, brighter, and extends into a
-   glowing rule that doubles as the section's lead-in separator. */
 .se-label-small {
     font-family: 'Inter', monospace;
     font-size: 14px;
@@ -736,7 +884,7 @@
         font-weight: 600;
     }
 
-/* Hoverable text panel — used for What is + What I Did */
+/* Hoverable text panel */
 .se-text-panel {
     background: #110505;
     border: 1px solid rgba(180,50,50,0.12);
@@ -768,7 +916,7 @@
         font-weight: 600;
     }
 
-/* What I did card — same panel style, kept as alias */
+/* What I did card */
 .se-did-card {
     background: #110505;
     border: 1px solid rgba(180,50,50,0.12);
@@ -837,8 +985,6 @@
         margin-top: 6px;
     }
 
-/* Sub-headings inside text panels (e.g. "What it is", "The Challenge").
-   Made slightly more prominent: brighter colour, wider letter-spacing. */
 .se-panel-heading {
     font-family: 'Jersey 25', monospace;
     font-size: 15px;
@@ -871,10 +1017,10 @@
 
 
 /* ══════════════════════════════════════════════════════
-   6. WHAT I DID — layout variants
+   7. WHAT I DID — layout variants
 ══════════════════════════════════════════════════════ */
 
-/* Timeline wrapper — vertical connecting line down the left */
+/* Timeline wrapper */
 .se-did-timeline {
     position: relative;
     display: flex;
@@ -883,7 +1029,6 @@
     padding-left: 32px;
 }
 
-    /* The line */
     .se-did-timeline::before {
         content: '';
         position: absolute;
@@ -895,7 +1040,6 @@
         border-radius: 1px;
     }
 
-    /* Dot node on each card */
     .se-did-timeline > .se-text-panel {
         position: relative;
         margin-bottom: 12px;
@@ -971,7 +1115,7 @@
 
 
 /* ══════════════════════════════════════════════════════
-   7. TAKEAWAYS — accordion dropdowns
+   8. TAKEAWAYS — accordion dropdowns
 ══════════════════════════════════════════════════════ */
 .se-takeaways {
     display: flex;
@@ -1076,7 +1220,7 @@
 
 
 /* ══════════════════════════════════════════════════════
-   8. SCROLL REVEAL
+   9. SCROLL REVEAL
 ══════════════════════════════════════════════════════ */
 .se-fade {
     opacity: 0;
@@ -1160,7 +1304,7 @@
 
 
 /* ══════════════════════════════════════════════════════
-   9. RESPONSIVE
+   10. RESPONSIVE
 ══════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
     .se-steam-hero {
@@ -1177,6 +1321,10 @@
 
     .se-info-header-img {
         aspect-ratio: 16/6;
+    }
+
+    .se-team-members {
+        gap: 18px 24px;
     }
 }
 
@@ -1244,5 +1392,22 @@
 
     .se-accordion.open .se-accordion-body {
         padding: 0 16px 16px;
+    }
+
+    .se-team-members {
+        gap: 16px 20px;
+    }
+
+    .se-team-member {
+        width: 66px;
+    }
+
+    .se-team-avatar {
+        width: 48px;
+        height: 48px;
+    }
+
+    .se-team-avatar--initials {
+        font-size: 15px;
     }
 }
