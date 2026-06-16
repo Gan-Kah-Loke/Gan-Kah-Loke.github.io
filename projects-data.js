@@ -75,10 +75,10 @@ const PROJECTS = [
         dateSort:  "2020-09",
         roles:     ["Multi-Disciplinary"],
         desc:      "A pedagogical tower defense game that transforms study habits and learning strategies into gameplay mechanics, tasking players with defending the academy through strategic planning and resource management.",
-        image:     "projects/games/bon-tress/Bon-Tress_Thumbnail.png",
+        image:     "projects/games/bontress/Bon-Tress_Thumbnail.png",
         status:    "mvp",
         playable:  true,
-        links:     { detail: "bon-tress.html" }
+        links:     { detail: "bontress.html" }
     },
     {
         title:     "Interaction Analysis - Ib (Open PDF)",
