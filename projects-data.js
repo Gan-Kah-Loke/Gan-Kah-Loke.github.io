@@ -62,7 +62,8 @@ const PROJECTS = [
         roles:     ["Solo Developer"],
         desc:      "Serve a super hungry cat its burgers! My first solo Unity2D mobile game.",
         image:     "projects/games/serveem/ServeEM_Thumbnail.png",
-        status:    "maintenance",
+        status:    "mvp",
+        playable:  true,
         links:     { detail: "serveem.html", playstore: "#" }
     },
     {

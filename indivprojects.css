@@ -1,0 +1,1248 @@
+﻿/* ═══════════════════════════════════════════════════════════════
+   INDIVIDUA; PROJECTS PAGE STYLES — Revised Layout
+   ───────────────────────────────────────────────────────────────
+   1. Lightbox
+   2. Hero Header (breadcrumb + title)
+   3. Steam Hero (media column + info column)
+   4. Action Bar (status + APK download)
+   5. Description Section (goals, panels, what-I-did)
+   6. What I Did — layout variants (split / row / mockups)
+   7. Takeaways Accordion
+   8. Scroll Reveal
+   9. Responsive
+═══════════════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════════════════════════════
+   1. LIGHTBOX
+══════════════════════════════════════════════════════ */
+.se-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.92);
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+    .se-lightbox.active {
+        display: flex;
+    }
+
+.se-lightbox-inner {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    cursor: default;
+    overflow: hidden;
+}
+
+.se-lightbox img {
+    display: block;
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid rgba(180,50,50,0.3);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.8);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+    cursor: zoom-in;
+    user-select: none;
+}
+
+    .se-lightbox img.zoomed {
+        cursor: zoom-out;
+    }
+
+.se-lightbox-close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    background: transparent;
+    border: 1px solid rgba(180,50,50,0.4);
+    color: #c94040;
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+    .se-lightbox-close:hover {
+        background: rgba(180,50,50,0.15);
+    }
+
+.se-lightbox-caption {
+    margin-top: 12px;
+    font-family: 'Inter', monospace;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: rgba(240,248,255,0.7);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   2. HERO HEADER — breadcrumb + title, sits above media card
+══════════════════════════════════════════════════════ */
+.se-trailer-header {
+    padding: 0 4px 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.se-trailer-header--right {
+    align-items: flex-end;
+}
+
+.se-breadcrumb {
+    font-family: 'Inter', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(240,248,255,0.38);
+    margin: 0;
+}
+
+.se-hero-title {
+    font-family: 'Jersey 25', monospace;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height: 1;
+    letter-spacing: 6px;
+    color: #ffffff;
+    text-shadow: none;
+    margin: 0;
+    display: block;
+    width: 100%;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   3. STEAM HERO — left media column + right info column
+══════════════════════════════════════════════════════ */
+.se-steam-hero-wrap {
+    background: #101010;
+    border-bottom: 1px solid rgba(180,50,50,0.2);
+    padding: 32px var(--se-gutter, 40px) 40px;
+    margin-top: 70px;
+}
+
+/* Outer grid: left-col | info-col
+   align-items: start so both sit from the top of the row */
+.se-steam-hero {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    gap: 24px;
+    max-width: var(--se-content-width, 1400px);
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* ── LEFT: title above + media card below ─────────── */
+.se-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.se-media-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: #0d0202;
+    border-radius: 10px;
+    box-shadow: 0 16px 60px rgba(0,0,0,0.7), 0 4px 16px rgba(180,50,50,0.12);
+    overflow: hidden;
+}
+
+.se-main-viewer {
+    width: 100%;
+    background: radial-gradient(ellipse at center, #1a0505 0%, #0a0000 100%);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.se-main-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+}
+
+.se-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+}
+
+/* Thumbnail strip */
+.se-thumb-strip {
+    display: flex;
+    align-items: stretch;
+    background: #0a0202;
+    border-top: 1px solid rgba(180,50,50,0.12);
+    overflow: hidden;
+    height: 72px;
+}
+
+.se-thumb-arrow {
+    flex-shrink: 0;
+    width: 30px;
+    background: rgba(180,50,50,0.1);
+    border: none;
+    color: rgba(240,248,255,0.6);
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    padding: 0;
+}
+
+    .se-thumb-arrow:hover {
+        background: rgba(180,50,50,0.28);
+        color: #fff;
+    }
+
+.se-thumb-track {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    flex: 1;
+    padding: 8px 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+    .se-thumb-track::-webkit-scrollbar {
+        display: none;
+    }
+
+.se-thumb {
+    position: relative;
+    flex-shrink: 0;
+    width: 96px;
+    height: 54px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, opacity 0.2s;
+    opacity: 0.6;
+}
+
+    .se-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .se-thumb.active {
+        border-color: #c94040;
+        opacity: 1;
+    }
+
+    .se-thumb:hover {
+        opacity: 0.88;
+        border-color: rgba(180,50,50,0.5);
+    }
+
+.se-thumb-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.42);
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+}
+
+/* ── RIGHT: info column ───────────────────────────── */
+/* Uses align-self: start; pushed down via margin-top so the
+   top of this card lines up with the top of the media card
+   (offsets the title header that sits above the left column). */
+.se-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-self: start;
+}
+
+.se-info-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    background: transparent;
+    border: none;
+    font-family: 'Inter', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(240,248,255,0.38);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+    .se-info-back-btn:hover {
+        color: #c98080;
+    }
+
+    .se-info-back-btn svg {
+        transition: transform 0.2s;
+    }
+
+    .se-info-back-btn:hover svg {
+        transform: translateX(-3px);
+    }
+
+.se-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: #110505;
+    border-radius: 10px;
+    box-shadow: 0 16px 60px rgba(0,0,0,0.7), 0 4px 16px rgba(180,50,50,0.1);
+    overflow: hidden;
+    box-sizing: border-box;
+    /* = gap(12px) + breadcrumb line (~14px) + gap(4px) + title line (~clamp ~45px) + 4px buffer = ~79px
+       Adjust this value if your font renders slightly differently. */
+    margin-top: 0;
+    align-self: start;
+}
+
+/* Steam-style header screenshot */
+.se-info-header-img {
+    width: 100%;
+    aspect-ratio: 16/7;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.se-info-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Short blurb */
+.se-info-blurb {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.75;
+    color: rgba(240,248,255,0.78);
+    margin: 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(180,50,50,0.1);
+}
+
+/* Meta rows */
+.se-info-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid rgba(180,50,50,0.1);
+    padding-bottom: 14px;
+}
+
+.se-info-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 4px 0;
+    flex-wrap: wrap;
+}
+
+    .se-info-row--tight {
+        gap: 16px;
+    }
+
+.se-info-note {
+    font-style: italic;
+    color: rgba(240,248,255,0.55);
+}
+
+.se-info-key {
+    font-family: 'Inter', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(240,248,255,0.4);
+    flex-shrink: 0;
+    min-width: 68px;
+}
+
+.se-info-val {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(240,248,255,0.85);
+    line-height: 1.5;
+}
+
+.se-info-val--link {
+    color: #c98080;
+}
+
+/* Tags */
+.se-info-tags-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: rgba(240,248,255,0.38);
+    margin-bottom: -4px;
+}
+
+.se-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.se-tag {
+    font-family: 'Inter', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: default;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.se-tag--genre {
+    color: #c08080;
+    background: rgba(180,50,50,0.12);
+    border: 1px solid rgba(180,50,50,0.4);
+}
+
+    .se-tag--genre:hover {
+        background: rgba(180,50,50,0.22);
+        border-color: rgba(180,50,50,0.6);
+        color: #e0b0b0;
+        transform: translateY(-2px);
+    }
+
+.se-tag--plat {
+    color: rgba(240,248,255,0.72);
+    background: rgba(240,248,255,0.05);
+    border: 1px solid rgba(240,248,255,0.14);
+}
+
+    .se-tag--plat:hover {
+        background: rgba(180,50,50,0.1);
+        border-color: rgba(180,50,50,0.4);
+        color: #e0b0b0;
+        transform: translateY(-2px);
+    }
+
+
+/* ══════════════════════════════════════════════════════
+   4. ACTION BAR — status + download, below hero
+   Constrained to left-col width only (2fr of the grid)
+══════════════════════════════════════════════════════ */
+.se-action-bar-wrap {
+    background: #0e0303;
+    border-bottom: 1px solid rgba(180,50,50,0.15);
+    padding: 20px var(--se-gutter, 40px);
+}
+
+/* Mirror the hero grid so the action bar lines up under the left col */
+.se-action-bar {
+    max-width: var(--se-content-width, 1400px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.se-action-bar-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-column: 1;
+}
+
+/* Status bar */
+.se-status-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    background: rgba(255,180,0,0.06);
+    border: 1px solid rgba(255,180,0,0.22);
+    border-left: 3px solid rgba(255,180,0,0.65);
+    border-radius: 0 5px 5px 0;
+    align-self: flex-start;
+}
+
+.se-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.se-status-dot--maintenance {
+    background: #ffb400;
+    box-shadow: 0 0 6px rgba(255,180,0,0.6);
+    animation: se-pulse 2s ease-in-out infinite;
+}
+
+.se-status-dot--live {
+    background: #4cde80;
+    box-shadow: 0 0 6px rgba(76,222,128,0.6);
+    animation: se-pulse 2s ease-in-out infinite;
+}
+
+.se-status-label {
+    font-family: 'Inter', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffb400;
+    font-weight: 600;
+}
+
+.se-status-detail {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(240,248,255,0.5);
+}
+
+@keyframes se-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+/* APK banner — full width of the left col */
+.se-apk-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 20px;
+    background: linear-gradient(100deg, #1e0808 0%, #180606 100%);
+    border: 1px solid rgba(180,50,50,0.2);
+    border-left: 3px solid rgba(180,50,50,0.5);
+    border-radius: 0 8px 8px 0;
+    color: #fce8e8;
+}
+
+.se-apk-btn-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.se-apk-btn-title {
+    font-family: 'Jersey 25', monospace;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #fce8e8;
+    line-height: 1;
+}
+
+.se-apk-btn-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(240,248,255,0.45);
+    letter-spacing: 0.5px;
+}
+
+/* The actual download anchor — red button only */
+.se-apk-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #b03030;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Jersey 25', monospace;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #fce8e8;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: background 0.2s, transform 0.2s;
+}
+
+    .se-apk-btn:hover {
+        background: #c94040;
+        transform: translateY(-2px);
+    }
+
+.se-apk-size {
+    font-family: 'Inter', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    font-weight: 400;
+}
+
+/* Stacked download banner — header on top, full-width button(s) below */
+.se-apk-banner--stacked {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+}
+
+.se-apk-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Standard button size: fixed comfortable footprint, not full-bleed stretch */
+.se-apk-btn--full {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    min-width: 240px;
+    padding: 12px 22px;
+    min-height: 44px;
+    background: #b03030;
+}
+
+    .se-apk-btn--full:hover {
+        background: #c94040;
+        transform: translateY(-2px);
+    }
+
+.se-apk-btn-label {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.se-apk-btn-platform {
+    font-family: 'Jersey 25', monospace;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: #fce8e8;
+    line-height: 1;
+}
+
+.se-apk-btn-filesize {
+    font-family: 'Inter', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: rgba(240,248,255,0.75);
+    text-transform: uppercase;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   5. DESCRIPTION SECTION — goals, text panels, what-I-did
+══════════════════════════════════════════════════════ */
+.se-desc-section {
+    background: #0a0101;
+    padding: 72px var(--se-gutter, 40px) 120px;
+}
+
+.se-desc-inner {
+    max-width: var(--se-content-width, 1040px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Section block + divider between blocks (Project Goals / What I Did / What I Learned).
+   Made more prominent: thicker, brighter, with a soft glow. */
+.se-content-section {
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    border-bottom: 2px solid rgba(180,50,50,0.28);
+    box-shadow: 0 1px 0 rgba(180,50,50,0.08);
+}
+
+    .se-content-section:last-child {
+        border-bottom: none;
+        box-shadow: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+/* Section label (e.g. "Project Goals", "What I Did", "What I Learned").
+   Made more prominent: larger, bolder, brighter, and extends into a
+   glowing rule that doubles as the section's lead-in separator. */
+.se-label-small {
+    font-family: 'Inter', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+    color: #e08888;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-shadow: 0 0 18px rgba(180,50,50,0.35);
+}
+
+    .se-label-small::after {
+        content: '';
+        flex: 1;
+        height: 2px;
+        border-radius: 1px;
+        background: linear-gradient(90deg, rgba(180,50,50,0.55), rgba(180,50,50,0));
+    }
+
+.se-overview-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 2.0;
+    color: rgba(240,248,255,0.88);
+    margin-bottom: 0;
+}
+
+    .se-overview-desc strong {
+        color: #F0F8FF;
+        font-weight: 600;
+    }
+
+/* Hoverable text panel — used for What is + What I Did */
+.se-text-panel {
+    background: #110505;
+    border: 1px solid rgba(180,50,50,0.12);
+    border-radius: 10px;
+    padding: 28px 32px;
+    transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+    .se-text-panel:hover {
+        background: #170606;
+        border-color: rgba(180,50,50,0.45);
+        box-shadow: 0 0 0 1px rgba(180,50,50,0.25), 0 12px 50px rgba(180,50,50,0.25);
+    }
+
+    .se-text-panel p {
+        font-family: 'Inter', sans-serif;
+        font-size: 17px;
+        line-height: 2.0;
+        color: rgba(240,248,255,0.88);
+        margin: 0 0 16px;
+    }
+
+        .se-text-panel p:last-child {
+            margin-bottom: 0;
+        }
+
+    .se-text-panel strong {
+        color: #F0F8FF;
+        font-weight: 600;
+    }
+
+/* What I did card — same panel style, kept as alias */
+.se-did-card {
+    background: #110505;
+    border: 1px solid rgba(180,50,50,0.12);
+    border-radius: 10px;
+    padding: 28px 32px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+    transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+    .se-did-card:hover {
+        background: #170606;
+        border-color: rgba(180,50,50,0.45);
+        box-shadow: 0 0 0 1px rgba(180,50,50,0.25), 0 12px 50px rgba(180,50,50,0.25);
+    }
+
+    .se-did-card p {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        line-height: 2.0;
+        color: rgba(240,248,255,0.85);
+        margin-bottom: 16px;
+    }
+
+        .se-did-card p:last-child {
+            margin-bottom: 0;
+        }
+
+    .se-did-card strong {
+        color: #F0F8FF;
+        font-weight: 600;
+    }
+
+/* Generic inline image grid (2-up) used inside panels */
+.se-inline-imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+    .se-inline-imgs .se-fig img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 6px;
+        border: 1px solid rgba(180,50,50,0.18);
+        background: #100404;
+        cursor: zoom-in;
+        transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+
+        .se-inline-imgs .se-fig img:hover {
+            border-color: rgba(180,50,50,0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+        }
+
+    .se-inline-imgs .se-fig figcaption {
+        font-family: 'Inter', monospace;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(240,248,255,0.4);
+        text-align: center;
+        margin-top: 6px;
+    }
+
+/* Sub-headings inside text panels (e.g. "What it is", "The Challenge").
+   Made slightly more prominent: brighter colour, wider letter-spacing. */
+.se-panel-heading {
+    font-family: 'Jersey 25', monospace;
+    font-size: 15px;
+    letter-spacing: 2.5px;
+    color: #d99090;
+    margin: 20px 0 6px;
+    text-transform: uppercase;
+}
+
+.se-text-panel .se-panel-heading:first-child {
+    margin-top: 0;
+}
+
+.se-goal-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.se-kw {
+    display: inline;
+    background: rgba(180,50,50,0.15);
+    border: 1px solid rgba(180,50,50,0.35);
+    color: #e0a0a0;
+    border-radius: 20px;
+    padding: 1px 10px;
+    font-size: 0.92em;
+    white-space: nowrap;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   6. WHAT I DID — layout variants
+══════════════════════════════════════════════════════ */
+
+/* Timeline wrapper — vertical connecting line down the left */
+.se-did-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 32px;
+}
+
+    /* The line */
+    .se-did-timeline::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 24px;
+        bottom: 24px;
+        width: 2px;
+        background: linear-gradient( to bottom, rgba(180,50,50,0), rgba(180,50,50,0.45) 12%, rgba(180,50,50,0.45) 88%, rgba(180,50,50,0) );
+        border-radius: 1px;
+    }
+
+    /* Dot node on each card */
+    .se-did-timeline > .se-text-panel {
+        position: relative;
+        margin-bottom: 12px;
+    }
+
+        .se-did-timeline > .se-text-panel:last-child {
+            margin-bottom: 0;
+        }
+
+        .se-did-timeline > .se-text-panel::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 26px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #c94040;
+            box-shadow: 0 0 0 3px rgba(180,50,50,0.15), 0 0 10px rgba(180,50,50,0.5);
+            transition: box-shadow 0.25s;
+        }
+
+        .se-did-timeline > .se-text-panel:hover::before {
+            box-shadow: 0 0 0 4px rgba(180,50,50,0.25), 0 0 16px rgba(180,50,50,0.7);
+        }
+
+/* Text left, image(s) right */
+.se-design-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+    .se-design-row p {
+        margin: 0;
+    }
+
+/* Multi-image row inside .se-design-row */
+.se-mockup-pair {
+    display: flex;
+    gap: 12px;
+    height: 220px;
+}
+
+    .se-mockup-pair .se-fig {
+        flex: 1;
+        margin: 0;
+        height: 100%;
+    }
+
+/* Shared image styles for all figures inside .se-design-row */
+.se-design-row .se-fig img {
+    width: 100%;
+    height: 100%;
+    max-height: 220px;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
+    border: 1px solid rgba(180,50,50,0.18);
+    background: #100404;
+    cursor: zoom-in;
+    display: block;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+    .se-design-row .se-fig img:hover {
+        border-color: rgba(180,50,50,0.5);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+
+
+/* ══════════════════════════════════════════════════════
+   7. TAKEAWAYS — accordion dropdowns
+══════════════════════════════════════════════════════ */
+.se-takeaways {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.se-accordion {
+    background: #110505;
+    border: 1px solid rgba(180,50,50,0.16);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    transition: border-color 0.2s;
+}
+
+    .se-accordion:hover {
+        border-color: rgba(180,50,50,0.32);
+    }
+
+    .se-accordion.open {
+        border-color: rgba(180,50,50,0.4);
+    }
+
+.se-accordion-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+    .se-accordion-btn:hover {
+        background: rgba(180,50,50,0.05);
+    }
+
+.se-accordion-icon {
+    font-family: 'Jersey 25', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #c06060;
+    background: rgba(180,50,50,0.1);
+    border: 1px solid rgba(180,50,50,0.3);
+    border-radius: 4px;
+    padding: 3px 9px;
+    flex-shrink: 0;
+    line-height: 1.5;
+}
+
+.se-accordion-title {
+    font-family: 'Jersey 25', monospace;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    flex: 1;
+    line-height: 1.2;
+}
+
+.se-accordion-arrow {
+    font-size: 14px;
+    color: rgba(240,248,255,0.35);
+    transition: transform 0.3s ease, color 0.2s;
+    flex-shrink: 0;
+}
+
+.se-accordion.open .se-accordion-arrow {
+    transform: rotate(180deg);
+    color: #c06060;
+}
+
+.se-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.38s ease, padding 0.28s ease;
+    padding: 0 22px;
+}
+
+.se-accordion.open .se-accordion-body {
+    max-height: 600px;
+    padding: 0 22px 22px;
+}
+
+.se-accordion-body p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    color: rgba(240,248,255,0.78);
+    margin: 0;
+    border-top: 1px solid rgba(180,50,50,0.1);
+    padding-top: 18px;
+}
+
+    .se-accordion-body p strong {
+        color: #F0F8FF;
+        font-weight: 600;
+    }
+
+
+/* ══════════════════════════════════════════════════════
+   8. SCROLL REVEAL
+══════════════════════════════════════════════════════ */
+.se-fade {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+    .se-fade.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+/* ══════════════════════════════════════════════════════
+   VIEW MORE PROJECTS
+══════════════════════════════════════════════════════ */
+.se-back-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 48px 0 0;
+}
+
+.se-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background: transparent;
+    border: 1px solid rgba(180,50,50,0.4);
+    border-radius: 6px;
+    font-family: 'Jersey 25', monospace;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #c98080;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+    .se-back-btn:hover {
+        background: rgba(180,50,50,0.1);
+        border-color: rgba(180,50,50,0.7);
+        color: #e0b0b0;
+        transform: translateY(-2px);
+    }
+
+/* ══════════════════════════════════════════════════════
+   SCROLL TO TOP
+══════════════════════════════════════════════════════ */
+.se-scroll-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 999;
+    width: 54px;
+    height: 54px;
+    background: #1a0505;
+    border: 1px solid rgba(180,50,50,0.4);
+    border-radius: 10px;
+    color: #c98080;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+    .se-scroll-top.visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .se-scroll-top:hover {
+        background: rgba(180,50,50,0.15);
+        border-color: rgba(180,50,50,0.7);
+        color: #e0b0b0;
+    }
+
+
+/* ══════════════════════════════════════════════════════
+   9. RESPONSIVE
+══════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+    .se-steam-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .se-action-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .se-info-col {
+        margin-top: 0;
+    }
+
+    .se-info-header-img {
+        aspect-ratio: 16/6;
+    }
+}
+
+@media (max-width: 860px) {
+    .se-panel-split {
+        grid-template-columns: 1fr;
+    }
+
+    .se-panel-row {
+        grid-template-columns: 1fr;
+    }
+
+    .se-did-timeline {
+        padding-left: 20px;
+    }
+
+    .se-design-row {
+        grid-template-columns: 1fr;
+    }
+
+    .se-mockup-pair {
+        height: 220px;
+    }
+}
+
+@media (max-width: 640px) {
+    .se-steam-hero-wrap,
+    .se-action-bar-wrap,
+    .se-desc-section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .se-did-card,
+    .se-text-panel {
+        padding: 20px;
+    }
+
+    .se-did-timeline {
+        padding-left: 0;
+    }
+
+        .se-did-timeline::before,
+        .se-did-timeline > .se-text-panel::before {
+            display: none;
+        }
+
+    .se-mockup-pair {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .se-design-row .se-fig img {
+        max-height: none;
+        aspect-ratio: 4/3;
+    }
+
+    .se-accordion-btn {
+        padding: 14px 16px;
+    }
+
+    .se-accordion-body {
+        padding: 0 16px;
+    }
+
+    .se-accordion.open .se-accordion-body {
+        padding: 0 16px 16px;
+    }
+}

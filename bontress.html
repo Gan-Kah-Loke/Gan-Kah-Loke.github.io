@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ServeEM — Project Page</title>
+    <title>Bon-Tress — Project Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="indivprojects.css" />
     <link rel="icon" href="assets/InfiniteBreaker_Logo.png" type="image/png">
+    <style>
+        /* Bon-Tress page override: status bar reads green/live, not yellow/maintenance */
+        .se-status-bar {
+            background: rgba(39,201,63,0.12);
+            border: 1px solid rgba(76,222,128,0.3);
+            border-left: 3px solid rgba(76,222,128,0.7);
+        }
+
+        .se-status-label {
+            color: #4cde80;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,35 +65,49 @@
         <div class="se-steam-hero-wrap">
             <div class="se-steam-hero">
 
-                <!-- LEFT col: video + thumbnail strip — plain card -->
+                <!-- LEFT col: media viewer + thumbnail strip -->
                 <div class="se-left-col">
                     <div class="se-trailer-header">
-                        <p class="se-breadcrumb">Works &rsaquo; Personal Projects &rsaquo; ServeEM</p>
-                        <h1 class="se-hero-title">ServeEM</h1>
+                        <p class="se-breadcrumb">Works &rsaquo; Team Projects &rsaquo; Bon-Tress</p>
+                        <h1 class="se-hero-title">Bon-Tress</h1>
                     </div>
                     <div class="se-media-col">
                         <div class="se-main-viewer">
-                            <video class="se-main-video" id="mainVideo"
-                                   autoplay
-                                   muted
-                                   loop
-                                   playsinline
-                                   controls>
-                                <source src="projects/games/serveem/gameplay.mp4" type="video/mp4">
-                            </video>
-
+                            <!-- YouTube iframe shown by default as the "trailer" thumb -->
+                            <iframe id="mainYoutube"
+                                    width="560"
+                                    height="315"
+                                    src="https://www.youtube.com/embed/fcfk5_2j-o0?si=dgVACHB9B4KQEx8e"
+                                    title="Bon-Tress Gameplay Trailer"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen
+                                    style="display:block; width:100%; height:100%;">
+                            </iframe>
                             <img class="se-main-img" id="mainImg"
                                  src="" alt="" style="display:none;" />
                         </div>
                         <div class="se-thumb-strip">
                             <button class="se-thumb-arrow se-thumb-arrow--prev" id="thumbPrev" aria-label="Scroll left">&#8249;</button>
                             <div class="se-thumb-track" id="thumbTrack">
-                                <div class="se-thumb active" data-type="video" data-src="projects/games/serveem/gameplay.mp4" data-poster="projects/games/serveem/ServeEM_Thumbnail.png">
-                                    <img src="projects/games/serveem/ServeEM_Thumbnail.png" alt="Gameplay trailer" />
+                                <!-- Trailer thumb -->
+                                <div class="se-thumb active" data-type="youtube" data-src="https://www.youtube.com/embed/fcfk5_2j-o0?si=dgVACHB9B4KQEx8e">
+                                    <img src="projects/games/bontress/Bon-Tress_Thumbnail.png" alt="Gameplay Trailer" />
                                     <span class="se-thumb-play">▶</span>
                                 </div>
-                                <div class="se-thumb" data-type="image" data-src="projects/games/serveem/gameplay_ss.png">
-                                    <img src="projects/games/serveem/gameplay_ss.png" alt="Gameplay screenshot" />
+                                <!-- Screenshots -->
+                                <div class="se-thumb" data-type="image" data-src="projects/games/bontress/gameplay_ss_01.png">
+                                    <img src="projects/games/bontress/gameplay_ss_01.png" alt="Gameplay Screenshot 1" />
+                                </div>
+                                <div class="se-thumb" data-type="image" data-src="projects/games/bontress/gameplay_ss_02.png">
+                                    <img src="projects/games/bontress/gameplay_ss_02.png" alt="Gameplay Screenshot 2" />
+                                </div>
+                                <div class="se-thumb" data-type="image" data-src="projects/games/bontress/map_forest.png">
+                                    <img src="projects/games/bontress/map_forest.png" alt="Forest Map" />
+                                </div>
+                                <div class="se-thumb" data-type="image" data-src="projects/games/bontress/map_sand.png">
+                                    <img src="projects/games/bontress/map_sand.png" alt="Sand Map" />
                                 </div>
                             </div>
                             <button class="se-thumb-arrow se-thumb-arrow--next" id="thumbNext" aria-label="Scroll right">&#8250;</button>
@@ -89,7 +115,7 @@
                     </div>
                 </div>
 
-                <!-- RIGHT col: header above + info card below -->
+                <!-- RIGHT col: back button + info card -->
                 <div class="se-right-col">
                     <div class="se-trailer-header se-trailer-header--right">
                         <p class="se-breadcrumb">&nbsp;</p>
@@ -100,25 +126,25 @@
                     </div>
                     <aside class="se-info-col">
                         <img class="se-info-header-img"
-                             src="projects/games/serveem/ServeEM_Thumbnail.png"
-                             alt="ServeEM header art" />
+                             src="projects/games/bontress/Bon-Tress_Thumbnail.png"
+                             alt="Bon-Tress header art" />
 
                         <div class="se-info-body">
                             <p class="se-info-blurb">
-                                Serve a super hungry cat by fulfilling bizarre burger orders while surviving shutters, distorted ingredient colours, and swapping buttons in chaotic fast-paced gameplay.
+                                Bons have invaded the academy! Build department structures strategically to defend against the slime assault while balancing your funds and productivity balance!
                             </p>
                             <div class="se-info-meta">
-                                <div class="se-info-row">
+                                <div class="se-info-row se-info-row--tight">
                                     <span class="se-info-key">TEAM</span>
-                                    <span class="se-info-val">Gan Kah Loke</span>
+                                    <span class="se-info-val">Gan Kah Loke, Chen Kun, Chiu Yuan Tolentino, Ryan Wong,<br>Wong Woon Li, Yan Yu <em class="se-info-note">(6 members)</em></span>
                                 </div>
-                                <div class="se-info-row">
+                                <div class="se-info-row se-info-row--tight">
                                     <span class="se-info-key">ROLES</span>
-                                    <span class="se-info-val se-info-val--link">Game Developer · Pixel Artist</span>
+                                    <span class="se-info-val se-info-val--link">Game Programmer · Game Designer</span>
                                 </div>
-                                <div class="se-info-row">
+                                <div class="se-info-row se-info-row--tight">
                                     <span class="se-info-key">DATE</span>
-                                    <span class="se-info-val">Dec 2020 – Jan 2021</span>
+                                    <span class="se-info-val">Jan 2020 – Sep 2020 <em class="se-info-note">(9 months)</em></span>
                                 </div>
                                 <div class="se-info-row">
                                     <span class="se-info-key">ENGINE</span>
@@ -126,49 +152,67 @@
                                 </div>
                                 <div class="se-info-row">
                                     <span class="se-info-key">PLATFORM</span>
-                                    <span class="se-info-val se-info-val--link">Google Play Store</span>
+                                    <span class="se-info-val se-info-val--link">PC · Mac</span>
+                                </div>
+                                <div class="se-info-row">
+                                    <span class="se-info-key">CLIENT</span>
+                                    <span class="se-info-val">Temasek Polytechnic Learning Academy · NUS · SP</span>
                                 </div>
                                 <div class="se-info-row">
                                     <span class="se-info-key">TOOLS</span>
-                                    <span class="se-info-val">Draw.io · C# · Aseprite · Trello</span>
+                                    <span class="se-info-val">Unity · C# · Adobe XD · Aseprite</span>
                                 </div>
                             </div>
                             <div class="se-info-tags-label">Project tags:</div>
                             <div class="se-tag-list">
-                                <span class="se-tag se-tag--genre">Arcade</span>
-                                <span class="se-tag se-tag--genre">Casual</span>
-                                <span class="se-tag se-tag--plat">Android</span>
+                                <span class="se-tag se-tag--genre">Tower Defense</span>
+                                <span class="se-tag se-tag--genre">Educational</span>
+                                <span class="se-tag se-tag--plat">PC</span>
+                                <span class="se-tag se-tag--plat">Mac</span>
                             </div>
                         </div>
                     </aside>
                 </div>
+
             </div>
         </div>
 
-        <!-- ═══ ACTION BAR — status + download, below hero ═══ -->
+        <!-- ═══ ACTION BAR — status + downloads ═══ -->
         <div class="se-action-bar-wrap">
             <div class="se-action-bar">
                 <div class="se-status-bar">
-                    <span class="se-status-dot se-status-dot--maintenance"></span>
-                    <span class="se-status-label">UNDER MAINTENANCE</span>
-                    <span class="se-status-detail">Unavailable on Google Play</span>
+                    <span class="se-status-dot se-status-dot--live"></span>
+                    <span class="se-status-label">PROTOTYPE AVAILABLE</span>
+                    <span class="se-status-detail">Playtest Build #4 — Over 20+ levels available!</span>
                 </div>
                 <div class="se-apk-banner se-apk-banner--stacked">
                     <div class="se-apk-btn-text">
-                        <span class="se-apk-btn-title">ServeEM v0.2.7</span>
-                        <span class="se-apk-btn-sub">Android APK · Sideload required</span>
+                        <span class="se-apk-btn-title">Bon-Tress Prototype v4</span>
+                        <span class="se-apk-btn-sub">PC &amp; Mac · Playtest Build</span>
                     </div>
                     <div class="se-apk-btn-group">
-                        <a href="projects/games/serveem/Serve_EM_Test_v0.2.7.apk"
-                           download="Serve_EM_Test_v0.2.7.apk"
+                        <a href="projects/games/bontress/Bon-Tress_Prototype_v4 (Windows).zip"
+                           download="Bon-Tress_Prototype_v4_(Windows).zip"
                            class="se-apk-btn se-apk-btn--full">
-                            <!-- Android icon -->
+                            <!-- Windows icon -->
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
-                                <path d="M17.523 15.341a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-9.046 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM2.255 9h19.49A10.54 10.54 0 0 0 20.6 6.594L22.5 4.7a.75.75 0 0 0-1.06-1.06l-1.745 1.744A9.96 9.96 0 0 0 12 3a9.96 9.96 0 0 0-7.695 2.384L2.56 3.64A.75.75 0 0 0 1.5 4.7l1.9 1.894A10.54 10.54 0 0 0 2.255 9zM2 11a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-1h.5A2.5 2.5 0 0 0 6 13.5V11H2zm16 0v2.5a2.5 2.5 0 0 0 2.5 2.5H21v1a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1h-4zm-12 0v5.5A2.5 2.5 0 0 0 8.5 19h7a2.5 2.5 0 0 0 2.5-2.5V11H6z" />
+                                <path d="M3 5.5L10.5 4.4V11.4H3V5.5ZM3 18.5L10.5 19.6V12.7H3V18.5ZM11.4 19.7L21 21V12.7H11.4V19.7ZM11.4 4.3V11.4H21V3L11.4 4.3Z" />
                             </svg>
                             <span class="se-apk-btn-label">
-                                <span class="se-apk-btn-platform">Download APK</span>
-                                <span class="se-apk-btn-filesize">25.7 MB</span>
+                                <span class="se-apk-btn-platform">Windows</span>
+                                <span class="se-apk-btn-filesize">36.5 MB</span>
+                            </span>
+                        </a>
+                        <a href="projects/games/bontress/Bon-Tress_Prototype_v4 (Mac)"
+                           download="Bon-Tress_Prototype_v4_(Mac)"
+                           class="se-apk-btn se-apk-btn--full">
+                            <!-- Mac icon -->
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+                                <path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-3.014 1.57-.12 0-.23-.02-.3-.03-.014-.1-.04-.34-.04-.58 0-1.14.572-2.27 1.224-2.98.804-.94 2.142-1.64 3.13-1.68.014.13.03.26.03.39-.02.077-.02.16-.02.23zm3.61 17.13c-.18.4-.4.81-.674 1.21-.91 1.36-2.21 2.97-3.94 2.97-1.61 0-2.06-1.04-3.92-1.04-1.83 0-2.38 1.01-3.96 1.07-1.7.06-2.99-1.42-3.91-2.79-1.93-2.82-3.32-7.97-1.38-11.45.96-1.74 2.67-2.83 4.52-2.86 1.63-.03 2.66 1.1 4.01 1.1 1.34 0 2.13-1.1 3.94-1.1.77 0 2.55.07 3.81 1.88-.1.06-2.27 1.33-2.27 4.07 0 3.18 2.78 4.31 2.79 4.95z" />
+                            </svg>
+                            <span class="se-apk-btn-label">
+                                <span class="se-apk-btn-platform">Mac</span>
+                                <span class="se-apk-btn-filesize">36.9 MB</span>
                             </span>
                         </a>
                     </div>
@@ -187,17 +231,18 @@
 
                         <div class="se-text-panel">
                             <h3 class="se-panel-heading">What it is</h3>
-                            <p>ServeEM is a fast-paced <span class="se-kw">arcade mobile game</span> where players prepare and serve burger orders while dealing with unpredictable disruptions that challenge <span class="se-kw">memory</span>, <span class="se-kw">reaction speed</span>, and <span class="se-kw">adaptability</span>.</p>
+                            <p>Bon-Tress is a <span class="se-kw">2D pixel tower defense game</span> where towers represent positive study habits and defend against <span class="se-kw">Bons</span>, enemies based on negative ones. It has <span class="se-kw">20+ levels</span> plus a tutorial, each adding new towers and mechanics.</p>
                         </div>
 
                         <div class="se-text-panel">
                             <h3 class="se-panel-heading">Why it was built</h3>
-                            <p>This project was built to explore what makes a <span class="se-kw">gameplay loop</span> engaging and replayable, balancing <span class="se-kw">unpredictability</span>, <span class="se-kw">player mastery</span>, and <span class="se-kw">score-chasing</span>. To keep the focus sharp, it was scoped as a <span class="se-kw">1-month solo project</span> taking the game from concept to release, intentionally small enough to experience the full mobile development pipeline end to end.</p>
+                            <p>Built for <span class="se-kw">Temasek Polytechnic Learning Academy</span> with <span class="se-kw">NUS</span> and <span class="se-kw">Singapore Polytechnic</span> to teach self-directed learning (SDL) through gameplay. Tower defense was chosen for its natural fit with <span class="se-kw">strategic thinking</span> and <span class="se-kw">problem-solving</span>.</p>
                         </div>
 
                         <div class="se-text-panel">
                             <h3 class="se-panel-heading">What it covered</h3>
-                            <p>The project provided hands-on experience shipping a mobile game to the <span class="se-kw">Google Play Store</span>, including <span class="se-kw">Google Play Games Services</span> integration, <span class="se-kw">Play Store submission</span>, <span class="se-kw">platform compliance</span>, and gameplay balancing for long-term <span class="se-kw">player retention</span>.</p>
+                            <p>Design was grounded in <span class="se-kw">Bloom's Taxonomy</span> and the <span class="se-kw">6 Learning Strategies</span>. Alongside the main campaign, <span class="se-kw">SDL minigames</span> like Dual Coding and Retrieval Practice let players test and reinforce study techniques over time.
+                            <br><br>The project gave me hands-on experience designing <span class="se-kw">serious games</span>, where the goal goes beyond entertainment to measurable learning outcomes.</p>
                         </div>
 
                     </div>
@@ -210,57 +255,56 @@
                     <div class="se-did-timeline">
 
                         <div class="se-text-panel se-panel-intro">
-                            <h3 class="se-panel-heading">Design and Prototyping</h3>
+                            <h3 class="se-panel-heading">Ideation and Prototyping</h3>
                             <div class="se-design-row">
-                                <p>Started with rough flow diagrams in <span class="se-kw">draw.io</span> to map out the order loop, malfunction triggers, and state transitions before writing any code. UI layout was sketched out early to nail button placement and on-screen feedback. These were then carried into an early <span class="se-kw">Unity 2D</span> prototype to validate the core interactions before any final art was in place.</p>
+                                <p>Led two prototype iterations, handling scoping decisions to fit the project timeline. Settling on a genre that suited the game's educational goals proved challenging early on, before pivoting to tower defense. Built the <span class="se-kw">Adobe XD</span> mockup and wrote the <span class="se-kw">Game Design Documents</span> to align the team early.</p>
                                 <div class="se-mockup-pair">
                                     <figure class="se-fig">
-                                        <img src="projects/games/serveem/mockup_01.png" data-lightbox="true" data-caption="mockup_01 — Draw.io" />
-                                    </figure>
-                                    <figure class="se-fig">
-                                        <img src="projects/games/serveem/mockup_02.png" data-lightbox="true" data-caption="mockup_02 — Draw.io" />
-                                    </figure>
-                                    <figure class="se-fig">
-                                        <img src="projects/games/serveem/prototype.png" data-lightbox="true" data-caption="prototype — Draw.io" />
+                                        <img src="projects/games/bontress/prototype.png" data-lightbox="true" data-caption="Adobe XD Prototype Mockup" />
                                     </figure>
                                 </div>
                             </div>
                         </div>
 
                         <div class="se-text-panel se-panel-intro">
-                            <h3 class="se-panel-heading">Playtesting and Iteration</h3>
-                            <p>Ran playtesting sessions with peers to evaluate pacing and difficulty. The main focus was tuning which <span class="se-kw">random effects</span> appeared and when, defining the unlock thresholds and set progression so that disruptions felt challenging without being arbitrary. Feedback from each session directly informed adjustments to the effect pool, spawn timing, and difficulty curve before the next round of testing.</p>
-                        </div>
-
-                        <div class="se-text-panel se-panel-intro">
-                            <h3 class="se-panel-heading">Leaderboard Integration</h3>
+                            <h3 class="se-panel-heading">Game Design</h3>
                             <div class="se-design-row">
-                                <p>Integrated <span class="se-kw">Google Play Games Services</span> to add a live leaderboard, giving players a competitive hook beyond personal score. This was also a deliberate opportunity to gain hands-on experience working with an <span class="se-kw">external API</span> inside a shipped game, covering authentication flow, score submission, and surfacing the leaderboard in-game.</p>
-                                <figure class="se-fig" style="margin:0;">
-                                    <img src="projects/games/serveem/leaderboard.png" alt="In-game leaderboard" data-lightbox="true" data-caption="Leaderboard — Google Play Games Services" />
-                                </figure>
+                                <p>Designed each <span class="se-kw">Bon's traits and abilities</span>. Balanced <span class="se-kw">20+ levels</span> of difficulty by tracking enemy speed, damage, and wave composition. Researched and iterated on multiple <span class="se-kw">scoring algorithms</span> to quantify learning as productivity, measuring how effectively players applied specific strategies, resource setup, and timing to clear each wave interval.</p>
+                                <div class="se-mockup-pair">
+                                    <figure class="se-fig">
+                                        <img src="projects/games/bontress/map_sand.png" data-lightbox="true" data-caption="Sand Map" />
+                                    </figure>
+                                </div>
                             </div>
                         </div>
 
                         <div class="se-text-panel se-panel-intro">
-                            <h3 class="se-panel-heading">Publish and Monitor</h3>
+                            <h3 class="se-panel-heading">Programming</h3>
                             <div class="se-design-row">
-                                <p>Submitted the game to the <span class="se-kw">Google Play Store</span>, working through the full compliance checklist including content ratings, data safety declarations, privacy policy, signing key management, and staged rollout. After launch, monitored user reviews and store feedback to identify issues and track reception.</p>
-                                <figure class="se-fig" style="margin:0;">
-                                    <img src="projects/games/serveem/review.png" alt="Store reviews" data-lightbox="true" data-caption="Post-launch — Store Reviews" />
-                                </figure>
+                                <p>Built <span class="se-kw">Bon behaviour</span> covering movement, ability triggers, and animation states. Used <span class="se-kw">object pooling</span> to optimize performance, and <span class="se-kw">Scriptable Objects</span> to let designers tune balancing values without touching code. Applied <span class="se-kw">inheritance</span> across Bons and towers for easy scalability as new types were added.</p>
+                                <div class="se-mockup-pair">
+                                    <figure class="se-fig">
+                                        <img src="projects/games/bontress/gameplay_ss_02.png" data-lightbox="true" data-caption="Gameplay Screenshot 2" />
+                                    </figure>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="se-text-panel">
-                            <h3 class="se-panel-heading">Monetisation and Analytics</h3>
-                            <p>Integrated <span class="se-kw">Unity Ads</span> for ad-based monetisation and <span class="se-kw">Unity Analytics</span> to track <span class="se-kw">DAU</span>, <span class="se-kw">MAU</span>, and average score. This was primarily an exercise in gaining practical experience with monetisation tooling and using real usage data to identify balance issues and inform tuning decisions.</p>
+                        <div class="se-text-panel se-panel-intro">
+                            <h3 class="se-panel-heading">Playtesting and Handover</h3>
+                            <div class="se-design-row">
+                                <p>Ran playtests with local students via <span class="se-kw">Google Forms</span>. Used feedback on mid-game difficulty and combat clarity to add an in-game <span class="se-kw">encyclopedia</span>. Before graduation, cleaned up <span class="se-kw">code comments</span> and wrote <span class="se-kw">documentation</span> for a smooth handover.</p>
+                                <div class="se-mockup-pair">
+                                    <figure class="se-fig">
+                                        <img src="projects/games/bontress/encyclopedia.png" data-lightbox="true" data-caption="In-Game Encyclopedia" />
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
 
-                <!-- TAKEAWAYS — accordion -->
+                <!-- TAKEAWAYS -->
                 <div class="se-content-section se-fade">
                     <p class="se-label-small">What I Learned</p>
                     <div class="se-takeaways">
@@ -268,12 +312,13 @@
                         <div class="se-accordion open">
                             <button class="se-accordion-btn" aria-expanded="true">
                                 <span class="se-accordion-icon">01</span>
-                                <span class="se-accordion-title">Solo Development Has Real Tradeoffs</span>
+                                <span class="se-accordion-title">Gamifying Learning Needs a Clear Pedagogical Anchor</span>
                                 <span class="se-accordion-arrow">▼</span>
                             </button>
                             <div class="se-accordion-body">
                                 <p>
-                                    Working alone meant full creative control, but also no one to catch what I'd stopped noticing. Playtesters flagged unclear icons and pacing issues I couldn't see myself. Outside feedback changed the game in ways internal review never could.
+                                    Designing a serious game means staying aware of the learning goals first, then using gameplay to elevate the experience without losing the lesson. Balancing "fun" against "educational" proved genuinely hard. My approach was to isolate one strategy to teach at a time and refine it before layering on more.
+                                    <br><br>In hindsight, the game itself should have included a built-in feature to track learning progress over time, validating whether goals were actually met and surfacing personalized support based on each player's outcomes.
                                 </p>
                             </div>
                         </div>
@@ -281,12 +326,12 @@
                         <div class="se-accordion">
                             <button class="se-accordion-btn" aria-expanded="false">
                                 <span class="se-accordion-icon">02</span>
-                                <span class="se-accordion-title">UI Scaling on Mobile Is a Separate Problem</span>
+                                <span class="se-accordion-title">Validate Core Mechanics Before Building Everything Else</span>
                                 <span class="se-accordion-arrow">▼</span>
                             </button>
                             <div class="se-accordion-body">
                                 <p>
-                                    Layouts that felt fine on my device broke on others, with tap targets becoming cramped or misaligned. In a game built on speed and precision, a misaligned button is a gameplay bug. Responsive layout needs to be a first-class concern from the start.
+                                    Our first prototype wasn't playtested until quests, narrative, art, and audio were already built, too late to catch design flaws. Pivoting to Bon-Tress taught me to validate the core loop first and commit resources only once it's proven.
                                 </p>
                             </div>
                         </div>
@@ -294,12 +339,12 @@
                         <div class="se-accordion">
                             <button class="se-accordion-btn" aria-expanded="false">
                                 <span class="se-accordion-icon">03</span>
-                                <span class="se-accordion-title">Publishing Is Far More Than Uploading a Build</span>
+                                <span class="se-accordion-title">Open-Ended Design Requires Extra Balancing Work</span>
                                 <span class="se-accordion-arrow">▼</span>
                             </button>
                             <div class="se-accordion-body">
                                 <p>
-                                    The code was done before the release was. Content ratings, data safety forms, privacy policies, signing keys, and staged rollouts all added work I hadn't planned for. I now understand why studios have dedicated production roles.
+                                    Letting players freely combine towers meant accounting for strategies we hadn't planned for. The scoring system took many iterations to stay fair across every possible approach.
                                 </p>
                             </div>
                         </div>
@@ -307,12 +352,12 @@
                         <div class="se-accordion">
                             <button class="se-accordion-btn" aria-expanded="false">
                                 <span class="se-accordion-icon">04</span>
-                                <span class="se-accordion-title">Monetisation Is a Discipline of Its Own</span>
+                                <span class="se-accordion-title">Code Flexibility Pays Off for Team Collaboration</span>
                                 <span class="se-accordion-arrow">▼</span>
                             </button>
                             <div class="se-accordion-body">
                                 <p>
-                                    Adding ads is easy. Making them work without hurting retention is not. Placement depends on timing relative to player state, not gut feel. Monetisation deserves the same rigour as core gameplay.
+                                    Working with other programmers meant dealing with merge conflicts and overlapping changes. Using Scriptable Objects and base class inheritance made it much easier for teammates to extend features independently.
                                 </p>
                             </div>
                         </div>
@@ -382,23 +427,22 @@
         document.fonts.ready.then(() =>
         document.documentElement.classList.replace('fonts-loading', 'fonts-loaded'));
 
-        // ── Media switcher
-        const mainVideo = document.getElementById('mainVideo');
-        const mainImg   = document.getElementById('mainImg');
-        const thumbs    = document.querySelectorAll('.se-thumb');
+        // ── Media switcher (YouTube iframe + images)
+        const mainYoutube = document.getElementById('mainYoutube');
+        const mainImg     = document.getElementById('mainImg');
+        const thumbs      = document.querySelectorAll('.se-thumb');
+
         thumbs.forEach(thumb => {
         thumb.addEventListener('click', () => {
         thumbs.forEach(t => t.classList.remove('active'));
         thumb.classList.add('active');
-        if (thumb.dataset.type === 'video') {
-        mainVideo.poster = thumb.dataset.poster || '';
-        mainVideo.src    = thumb.dataset.src;
-        mainVideo.style.display = 'block';
-        mainImg.style.display   = 'none';
-        mainVideo.load();
+
+        if (thumb.dataset.type === 'youtube') {
+        mainImg.style.display     = 'none';
+        mainYoutube.style.display = 'block';
+        mainYoutube.src = thumb.dataset.src;
         } else {
-        mainVideo.pause();
-        mainVideo.style.display = 'none';
+        mainYoutube.style.display = 'none';
         mainImg.src             = thumb.dataset.src;
         mainImg.alt             = thumb.querySelector('img').alt;
         mainImg.style.display   = 'block';
@@ -452,12 +496,10 @@
         btn.addEventListener('click', () => {
         const acc = btn.closest('.se-accordion');
         const isOpen = acc.classList.contains('open');
-        // Close all
         document.querySelectorAll('.se-accordion').forEach(a => {
         a.classList.remove('open');
         a.querySelector('.se-accordion-btn').setAttribute('aria-expanded', 'false');
         });
-        // Toggle clicked
         if (!isOpen) {
         acc.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
@@ -505,7 +547,6 @@
 
         const observer = new IntersectionObserver(
         entries => {
-        // Show button once the trailer section scrolls out of view
         btn.classList.toggle('visible', !entries[0].isIntersecting);
         },
         { threshold: 0 }

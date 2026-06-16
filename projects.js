@@ -1,5 +1,5 @@
-﻿const navbar  = document.querySelector('.navbar');
-const burger  = document.getElementById('navBurger');
+﻿const navbar = document.querySelector('.navbar');
+const burger = document.getElementById('navBurger');
 const content = document.querySelector('.page-content');
 
 function toTitleCase(str) {
@@ -20,8 +20,8 @@ function buildCategory(categoryLabel, projects, tall = false) {
     grid.className = tall ? 'gp-grid gp-grid--tall' : 'gp-grid';
     projects.forEach(p => {
         const primaryEntry = Object.entries(p.links || {})[0];
-        const primaryHref  = primaryEntry ? primaryEntry[1] : '#';
-        const isPdf        = primaryHref.endsWith('.pdf');
+        const primaryHref = primaryEntry ? primaryEntry[1] : '#';
+        const isPdf = primaryHref.endsWith('.pdf');
         const wrapper = document.createElement('div');
         const card = document.createElement('div');
         card.className = tall ? 'gp-card gp-card--tall' : 'gp-card';
@@ -30,7 +30,7 @@ function buildCategory(categoryLabel, projects, tall = false) {
             ? `<span class="gp-pill gp-pill--${p.status}">${p.status === 'mvp' ? 'Vertical Slice' : p.status === 'wip' ? 'WIP' : p.status === 'maintenance' ? 'Maintenance' : 'Coming Soon'}</span>`
             : '';
         const playPill = p.playable
-            ? `<span class="gp-pill gp-pill--play">▶ Playable Demo</span>`
+            ? `<span class="gp-pill gp-pill--play">▶ Playable Prototype</span>`
             : '';
 
         card.innerHTML = `
@@ -58,63 +58,17 @@ function buildCategory(categoryLabel, projects, tall = false) {
     });
     section.appendChild(grid);
     document.querySelector('.gp-section').appendChild(section);
-    genreSection.style.display = 'none'; // temp hide the section
 }
 
-const gameProjects = [...PROJECTS].filter(p => p.dimension === 'game' || p.dimension === 'personal');
-const genreMap = {};
-gameProjects.forEach(p => {
-    (p.genres || []).forEach(g => {
-        if (!genreMap[g]) genreMap[g] = [];
-        genreMap[g].push(p.title);
-    });
-});
-
-const genreSection = document.createElement('div');
-genreSection.className = 'gp-genre-section';
-genreSection.innerHTML = `
-    <div class="gp-genre-header">
-        <span class="gp-genre-heading">Genre Experience</span>
-        <span class="gp-genre-line"></span>
-    </div>
-    <div class="gp-genre-sub">Genres covered across all game projects developed</div>
-    <div class="gp-genre-chips" id="gpGenreChips"></div>
-    <div class="gp-genre-stat"></div>
-`;
-document.querySelector('.gp-section').appendChild(genreSection);
-
-const sortedGenres = Object.entries(genreMap).sort((a, b) => b[1].length - a[1].length);
-const chipsEl = document.getElementById('gpGenreChips');
-sortedGenres.forEach(([genre, titles]) => {
-    const chip = document.createElement('div');
-    chip.className = 'gp-genre-chip';
-    chip.innerHTML = `
-        <div class="gp-genre-chip-inner">
-            <span class="gp-genre-name">${genre}</span>
-            <span class="gp-genre-count">${titles.length}</span>
-        </div>
-        <div class="gp-genre-dropdown">
-            <div class="gp-genre-dropdown-title">Projects</div>
-            ${titles.map(t => `<div class="gp-genre-dropdown-item">${t}</div>`).join('')}
-        </div>
-    `;
-    chipsEl.appendChild(chip);
-});
-
-const totalGenres = sortedGenres.length;
-const totalProjects = [...new Set(sortedGenres.flatMap(([, t]) => t))].length;
-genreSection.querySelector('.gp-genre-stat').innerHTML =
-    `<span class="gp-genre-stat-accent">${totalGenres}</span> genres across <span class="gp-genre-stat-accent">${totalProjects}</span> projects`;
-
-const projectsPersonal    = sortedProjects.filter(p => p.dimension === 'personal');
-const projectsGame        = sortedProjects.filter(p => p.dimension === 'game');
-const projectsAnalysis    = sortedProjects.filter(p => p.dimension === 'analysis');
+const projectsPersonal = sortedProjects.filter(p => p.dimension === 'personal');
+const projectsGame = sortedProjects.filter(p => p.dimension === 'game');
+const projectsAnalysis = sortedProjects.filter(p => p.dimension === 'analysis');
 const projectsLevelDesign = sortedProjects.filter(p => p.dimension === 'leveldesign');
 
 buildCategory('Personal Projects', projectsPersonal);
 buildCategory('Academic Game Projects', projectsGame);
 buildCategory('Game Analysis', projectsAnalysis, true);
-buildCategory('Level Design', projectsLevelDesign, true);
+//buildCategory('Level Design', projectsLevelDesign, true);
 
 if (burger && navbar) {
     burger.addEventListener('click', () => navbar.classList.toggle('active'));

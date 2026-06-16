@@ -40,6 +40,16 @@
     </nav>
 
     <main class="page-content">
+
+        <!-- ANNOUNCEMENT BANNER — inline, below navbar -->
+        <div class="gp-announce-wrap" id="gpAnnounceWrap">
+            <div class="gp-announce-banner">
+                <span class="gp-announce-icon">🚧</span>
+                <span class="gp-announce-text">Academic game project pages are still being built out — some links may be incomplete.</span>
+                <button class="gp-announce-close" id="gpAnnounceClose" aria-label="Dismiss">✕</button>
+            </div>
+        </div>
+
         <section class="gp-section">
         </section>
     </main>
@@ -86,6 +96,15 @@
     <script src="projects-data.js"></script>
     <script src="pdf-viewer.js"></script>
     <script src="projects.js"></script>
+    <script>
+        const closeBtn = document.getElementById('gpAnnounceClose');
+        const wrap     = document.getElementById('gpAnnounceWrap');
+        if (closeBtn && wrap) {
+        closeBtn.addEventListener('click', () => {
+        wrap.classList.add('gp-announce-wrap--hidden');
+        });
+        }
+    </script>
 
 </body>
 </html>
