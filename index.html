@@ -31,6 +31,8 @@
         <button class="panel-dot" type="button" data-panel="0" aria-label="Home"></button>
         <button class="panel-dot" type="button" data-panel="1" aria-label="About"></button>
         <button class="panel-dot" type="button" data-panel="2" aria-label="Projects"></button>
+        <button class="panel-dot" type="button" data-panel="3" aria-label="Artworks"></button>
+        <button class="panel-dot" type="button" data-panel="4" aria-label="Contact"></button>
     </div>
 
     <nav class="navbar">
@@ -41,8 +43,8 @@
             <li><a href="#" class="active" data-panel="0">HOME</a></li>
             <li><a href="#about" data-panel="1">ABOUT</a></li>
             <li><a href="#projects" data-panel="2">WORKS</a></li>
-            <li><a href="artworks.html">ART</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#artworks" data-panel="3">ART</a></li>
+            <li><a href="#contact" data-panel="4">CONTACT</a></li>
             <li class="nav-cta-item">
                 <a href="assets/Gan_Kah_Loke_Resume.pdf"
                    download="Gan_Kah_Loke_Resume.pdf"
@@ -477,28 +479,28 @@
                                     <div class="faq-body">
                                         <div class="faq-games-grid">
                                             <div class="faq-games-row">
-                                                <div class="faq-game-card">
+                                                <a class="faq-game-card" href="https://store.steampowered.com/app/391540/Undertale/" target="_blank" rel="noopener">
                                                     <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/391540/capsule_231x87.jpg" alt="Undertale" class="faq-game-img" />
                                                     <span class="faq-game-title">Undertale</span>
-                                                </div>
-                                                <div class="faq-game-card">
+                                                </a>
+                                                <a class="faq-game-card" href="https://store.steampowered.com/app/587620/Okami_HD/" target="_blank" rel="noopener">
                                                     <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/587620/capsule_231x87.jpg" alt="Okami HD" class="faq-game-img" />
                                                     <span class="faq-game-title">Okami HD</span>
-                                                </div>
-                                                <div class="faq-game-card">
+                                                </a>
+                                                <a class="faq-game-card" href="https://store.steampowered.com/app/557600/Gorogoa/" target="_blank" rel="noopener">
                                                     <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/557600/capsule_231x87.jpg" alt="Gorogoa" class="faq-game-img" />
                                                     <span class="faq-game-title">Gorogoa</span>
-                                                </div>
+                                                </a>
                                             </div>
                                             <div class="faq-games-row faq-games-row--center">
-                                                <div class="faq-game-card">
+                                                <a class="faq-game-card" href="https://store.steampowered.com/app/646570/Slay_the_Spire/" target="_blank" rel="noopener">
                                                     <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/646570/capsule_231x87.jpg" alt="Slay the Spire" class="faq-game-img" />
                                                     <span class="faq-game-title">Slay the Spire</span>
-                                                </div>
-                                                <div class="faq-game-card">
+                                                </a>
+                                                <a class="faq-game-card" href="https://store.steampowered.com/app/1901370/Ib/" target="_blank" rel="noopener">
                                                     <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1901370/capsule_231x87.jpg" alt="Ib" class="faq-game-img" />
                                                     <span class="faq-game-title">Ib</span>
-                                                </div>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -565,7 +567,7 @@
                         <button class="project-folder-tab active">Academic Games</button>
                         <button class="project-folder-tab">Personal Games</button>
                         <button class="project-folder-tab">Game Analysis</button>
-                        <button class="project-folder-tab">Freelance Works</button>
+                        <!--<button class="project-folder-tab">Freelance Works</button>-->
                     </div>
 
                     <div class="project-folder-body">
@@ -619,23 +621,103 @@
         </div>
     </section>
 
+    <!-- ══════════════════════════════════════════════════════════
+         ARTWORKS PANEL
+    ══════════════════════════════════════════════════════════ -->
+    <section id="artworks" class="panel" data-panel-index="3">
+        <div class="artworks-section">
+            <div class="artworks-inner">
+                <div class="artworks-tabs">
+                    <button class="artworks-tab active" data-category="pixel-art" type="button">Pixel Art</button>
+                    <button class="artworks-tab" data-category="traditional" type="button">Traditional</button>
+                </div>
+
+                <div class="artworks-grid-wrap">
+                    <div class="artworks-grid" id="artworksGrid"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         CONTACT PANEL
+    ══════════════════════════════════════════════════════════ -->
+    <section id="contact" class="panel" data-panel-index="4">
+        <div class="contact-section">
+            <div class="sec-header">
+                <div class="sec-header-rule"></div>
+                <span class="sec-header-label" data-text="Let's Connect!">Let's Connect!</span>
+                <div class="sec-header-rule"></div>
+            </div>
+
+            <p class="contact-text">
+                I'm happy to chat about games, projects, or opportunities.<br>Don't be shy, reach out anytime.
+            </p>
+
+            <p class="contact-email-tag">kahlokegan@gmail.com</p>
+
+            <div class="contact-actions">
+                <a href="assets/Gan_Kah_Loke_Resume.pdf" download="Gan_Kah_Loke_Resume.pdf" target="_blank" class="btn-projects contact-resume-btn">
+                    <img src="assets/KeyIcon.png" alt="" />
+                    <span>Get Resume</span>
+                </a>
+            </div>
+
+            <div class="contact-socials">
+                <a href="mailto:kahlokegan@gmail.com" class="about-social-btn" aria-label="Email">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/gan-kah-loke/" target="_blank" class="about-social-btn" aria-label="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
+                </a>
+                <a href="https://www.instagram.com/pixinite_art/" target="_blank" class="about-social-btn" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" /></svg>
+                </a>
+                <a href="https://infinitebreaker.itch.io/" target="_blank" class="about-social-btn" aria-label="itch.io">
+                    <svg width="18" height="18" viewBox="0 0 248 248" fill="currentColor"><path d="M31.99 1.365C21.287 7.542.2 31.945 0 38.524v9.015c0 11.498 10.775 21.538 20.544 21.538 11.772 0 21.623-9.761 21.623-21.46 0 11.699 9.55 21.46 21.322 21.46 11.771 0 21.095-9.761 21.095-21.46 0 11.699 10.143 21.46 21.914 21.46h.223c11.772 0 21.916-9.761 21.916-21.46 0 11.699 9.322 21.46 21.094 21.46 11.771 0 21.32-9.761 21.32-21.46 0 11.699 9.851 21.46 21.622 21.46 9.77 0 20.545-10.04 20.545-21.538v-9.015c-.2-6.579-21.287-30.982-31.99-37.16C181.669-.012 63.369-.149 31.99 1.365zM8 73.452v110.29h232V73.452H8zm26.06 18.732h179.88v72.826H34.06V92.184zm-8.06 82.826v35.71h248v-35.71H26zm35.714 9.284h60v17.142h-60v-17.142zm90.572 0h60v17.142h-60v-17.142z" /></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artwork expand lightbox -->
+    <div class="artwork-lightbox" id="artworkLightbox">
+        <div class="artwork-lightbox-backdrop" id="artworkLightboxBackdrop"></div>
+        <button class="artwork-lightbox-close" id="artworkLightboxClose" aria-label="Close">&times;</button>
+        <div class="artwork-lightbox-content">
+            <img id="artworkLightboxImg" src="" alt="" />
+            <div class="artwork-lightbox-caption">
+                <span class="artwork-lightbox-title" id="artworkLightboxTitle"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="artworks-data.js"></script>
+    <script src="artworks-panel.js"></script>
     <script src="main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelectorAll('.nav-links a[data-panel]');
+        const panels   = document.querySelectorAll('.panel');
+        const dots     = document.querySelectorAll('.panel-dot');
 
-        // Clicking ABOUT/WORKS reuses the existing dot-click panel switcher
+        // Switch panels directly instead of simulating a dot click.
+        // A synthetic .click() fires at (0,0), which triggers main.js's
+        // tap-pulse click-feedback effect at the wrong position — this
+        // avoids that entirely by just toggling the active classes.
+        function goToPanel(index) {
+        panels.forEach(p => p.classList.toggle('panel-active', p.dataset.panelIndex === index));
+        dots.forEach(d => d.classList.toggle('active', d.dataset.panel === index));
+        }
+
         navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
         e.preventDefault();
-        const index = link.dataset.panel;
-        const targetDot = document.querySelector(`.panel-dot[data-panel="${index}"]`);
-        if (targetDot) targetDot.click();
+        goToPanel(link.dataset.panel);
         });
         });
 
         // Keep the nav tab highlighted in sync with whichever panel is active
-        const panels = document.querySelectorAll('.panel');
         const syncActiveNav = () => {
         const activePanel = document.querySelector('.panel.panel-active');
         if (!activePanel) return;
@@ -651,6 +733,25 @@
         });
 
         syncActiveNav(); // correct state on initial load
+
+        // Drive the bottom page label from whichever dot is active,
+        // independent of main.js — works for all panels, including
+        // ones navigated to via the top nav.
+        const pageLabel = document.querySelector('.panel-page-label');
+        const syncPageLabel = () => {
+        if (!pageLabel) return;
+        const activeDot = document.querySelector('.panel-dot.active');
+        if (!activeDot) return;
+        pageLabel.textContent = activeDot.getAttribute('aria-label') || '';
+        pageLabel.classList.add('visible');
+        };
+
+        const dotObserver = new MutationObserver(syncPageLabel);
+        dots.forEach(dot => {
+        dotObserver.observe(dot, { attributes: true, attributeFilter: ['class'] });
+        });
+
+        syncPageLabel(); // correct state on initial load
         });
     </script>
 </body>
